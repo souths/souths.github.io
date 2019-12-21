@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>东信智能读卡器,promise,WebSocket结合代码 | souths的博客</title>
+    <meta property="og:title" content="东信智能读卡器,promise,WebSocket结合代码 - souths的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2019-12-21T17:05:35&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2019-12-21T17:05:35&#43;08:00'>
+        
+    <meta name="Keywords" content="javascript,html,css,souths,node,php,博客,python等语言,公众号,小程序,爱好谈股论金">
+    <meta name="description" content="东信智能读卡器,promise,WebSocket结合代码">
+        
+    <meta name="author" content="souths">
+    <meta property="og:url" content="https://souths.github.io/post/%E4%B8%9C%E4%BF%A1%E6%99%BA%E8%83%BD%E8%AF%BB%E5%8D%A1%E5%99%A8promiseWebSocket%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://souths.github.io/">
+                        souths的博客
+                    </a>
+                
+                <p class="description">专注于大前端领域、了解node,php,python等语言,公众号,小程序,爱好谈股论金</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://souths.github.io/">首页</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -220px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        margin: 0 10px;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents"></nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">东信智能读卡器,promise,WebSocket结合代码</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年12月21日
+        </date>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <p>`
+/**</p>
+<ul>
+<li>
+<p>用法</p>
+</li>
+<li>
+<p>import dgSocket from &ldquo;@/common/ts/dgSocket&rdquo;;</p>
+</li>
+<li>
+<pre><code>//钩子函数中对dgSocket进行初始化和使用this.$bus.$on('wsMessage',({type,message}:any,data:any)=&gt;{})监听数据的变化
+</code></pre>
+</li>
+<li>
+<p>type:&lsquo;error'|'success&rsquo;</p>
+</li>
+<li>
+<p>message:&lsquo;提示的文字&rsquo;</p>
+</li>
+<li>
+<p>data:只有获取数据成功,data才有值</p>
+</li>
+<li>
+<p>dgSocket.closeSocket() 关闭设备</p>
+</li>
+<li>
+<p>dgSocket.readIDCard() 读取身份信息</p>
+</li>
+<li>
+<p>dgSocket.readM1Card() 读取M1卡号</p>
+</li>
+<li>
+<p>dgSocket.readBankCard() 读取银行卡号</p>
+</li>
+<li>
+<p>dgSocket.readVersionNum() 获取版本号
+created() {
+dgSocket()  // 初始化
+this.$bus.$on(&lsquo;wsMessage&rsquo;,({type,message}:any,data:any)=&gt;{</p>
+<p>})
+}
+*/
+import Vue from &lsquo;vue&rsquo;
+const vue = new Vue()
+const wstUrl = &ldquo;ws://127.0.0.1&rdquo;, port = &lsquo;6688&rsquo;;
+let webSocket: any = null, sendFlag = 0, imageFormat = &lsquo;', sfzuid = &ldquo;&quot;;
+var dgSocket: any = function (selector: any): any {
+return new dgSocket.prototype.init(selector);
+}
+dgSocket.prototype = {
+init: function (selector: any = &lsquo;dgWs&rsquo;) {
+let promise = new Promise((resolve, reject)=&gt;{
+//初始化处理&hellip;
+if (!webSocket) {
+// vue.$bus.$emit(&lsquo;wsMessage&rsquo;, { &lsquo;type&rsquo;: &lsquo;error&rsquo;, &lsquo;message&rsquo;: &lsquo;WebSocket未创建.&rsquo; }, null)
+console.log(&lsquo;WebSocket未创建.')
+webSocket = new WebSocket(<code>${wstUrl}:${port}</code>)
+} else {
+// vue.$bus.$emit(&lsquo;wsMessage&rsquo;,{&lsquo;type&rsquo;:&lsquo;success&rsquo;,&lsquo;message&rsquo;:&lsquo;WebSocket已创建.'},null)
+console.log(&lsquo;WebSocket已创建.')
+}
+try {
+webSocket.onopen = function () {
+console.log(&lsquo;WebSocket创建成功&rsquo;)
+// vue.$bus.$emit(&lsquo;wsMessage&rsquo;,{&lsquo;type&rsquo;:&lsquo;success&rsquo;,&lsquo;message&rsquo;:&lsquo;WebSocket创建成功.'},null)
+resolve(&lsquo;WebSocket创建成功&rsquo;)
+};
+// webSocket.onerror = function () {
+//     alert(&lsquo;请安装读卡器驱动.')
+//     vue.$bus.$emit(&lsquo;wsMessage&rsquo;, { &lsquo;type&rsquo;: &lsquo;error&rsquo;, &lsquo;message&rsquo;: &lsquo;请安装读卡器驱动.&rsquo; }, null)
+// };
+webSocket.onmessage = function (msg: any) {
+// console.log(msg,dgSocket.promisePool,&lsquo;msgmsgmsg&rsquo;)
+const req = dgSocket.promisePool[&lsquo;SDT_Json_ReadIDCard#']
+if (typeof msg.data == &ldquo;string&rdquo;) {
+var msgM = msg.data + &ldquo;&quot;;
+if (sendFlag == 1) {
+if (msgM[0] == &ldquo;1&rdquo;) {
+// vue.$bus.$emit(&lsquo;wsMessage&rsquo;,{&lsquo;type&rsquo;:&lsquo;success&rsquo;,&lsquo;message&rsquo;:&lsquo;清除头像成功.'},null)
+} else if (msgM[0] == &ldquo;2&rdquo;) {
+// vue.$bus.$emit(&lsquo;wsMessage&rsquo;,{&lsquo;type&rsquo;:&lsquo;success&rsquo;,&lsquo;message&rsquo;:&lsquo;除了正在使用的头像，其他头像清除成功.'},null)
+}
+} else if (sendFlag == 2) {
+let obj = JSON.parse(msgM);
+let resultFlag = obj.resultFlag;
+if (resultFlag == &ldquo;0&rdquo;) {
+req.resolve({ &lsquo;type&rsquo;: &lsquo;error&rsquo;, &lsquo;message&rsquo;: &lsquo;身份证阅读器异常,请联系管理员.',data:null });
+} else if (resultFlag == &ldquo;2&rdquo;) {
+req.resolve({ &lsquo;type&rsquo;: &lsquo;error&rsquo;, &lsquo;message&rsquo;: &lsquo;请连接设备.',data:null });
+} else if (resultFlag == &ldquo;4&rdquo;) {
+sfzuid = &ldquo;&quot;;
+req.resolve({ &lsquo;type&rsquo;: &lsquo;error&rsquo;, &lsquo;message&rsquo;: &lsquo;请放身份证.',data:null });
+} else if (resultFlag == &ldquo;5&rdquo;) {
+req.resolve({ &lsquo;type&rsquo;: &lsquo;error&rsquo;, &lsquo;message&rsquo;: &lsquo;读取身份证信息失败,请查身份证是否有效.',data:null });
+} else if (resultFlag == &ldquo;1&rdquo;) {
+//获得身份信息
+// document.getElementById(&ldquo;text_ID&rdquo;).value = obj.sUID;  //证件ID
+// document.getElementById(&ldquo;text_name&rdquo;).value = obj.pName;  //姓名<br>
+// document.getElementById(&ldquo;text_sex&rdquo;).value = obj.pSex;  //性别          <br>
+// document.getElementById(&ldquo;text_nation&rdquo;).value = obj.pNation;  //民族                   <br>
+// document.getElementById(&ldquo;text_birthday&rdquo;).value = obj.pBirth; //出生日期               <br>
+// document.getElementById(&ldquo;text_address&rdquo;).value = obj.pAddress; //地址<br>
+// document.getElementById(&ldquo;text_idNum&rdquo;).value = obj.pCertNo; //身份证号   <br>
+// document.getElementById(&ldquo;text_dept&rdquo;).value = obj.pDepartment;  //签发机关 <br>
+// document.getElementById(&ldquo;text_effDate&rdquo;).value = obj.pEffectData; //有效日期起始
+// document.getElementById(&ldquo;text_expDate&rdquo;).value = obj.pExpire; //有效日期截止
+// document.all(&ldquo;PhotoID&rdquo;).src = &ldquo;data:image/jpeg;base64,&rdquo; + obj.imageBase64;  //显示头像
+req.resolve({ &lsquo;type&rsquo;: &lsquo;success&rsquo;, &lsquo;message&rsquo;: &lsquo;获得身份信息成功.',data:obj });</p>
+<pre><code>                         dgSocket.posBeep();//蜂鸣
+                     }
+
+                 } else if (sendFlag == 3) {
+                     let obj = JSON.parse(msgM);
+                     let resultFlag = obj.resultFlag;
+                     if (resultFlag == &quot;0&quot;) {
+                         vue.$bus.$emit('wsMessage', { 'type': 'error', 'message': '身份证阅读器异常,请联系管理员.' }, null)
+                     } else if (resultFlag == &quot;2&quot; || resultFlag == &quot;3&quot;) {
+                         vue.$bus.$emit('wsMessage', { 'type': 'error', 'message': '请连接设备.' }, null)
+                     } else if (resultFlag == &quot;4&quot;) {
+                         vue.$bus.$emit('wsMessage', { 'type': 'error', 'message': '请放M1卡.' }, null)
+                         sfzuid = &quot;&quot;;
+                     } else if (resultFlag == &quot;5&quot;) {
+                         vue.$bus.$emit('wsMessage', { 'type': 'error', 'message': '读取M1卡失败,请查M1是否有效.' }, null)
+                     } else if (resultFlag == &quot;1&quot;) {
+                         //获得M1卡号
+                         vue.$bus.$emit('wsMessage', { 'type': 'success', 'message': '获得M1卡号.' }, obj)
+                         // document.getElementById(&quot;text_IC_ID&quot;).value = obj.pMCard; //证件ID
+                     }
+                 } else if (sendFlag == 4) {
+                     let obj = JSON.parse(msgM);
+                     let resultFlag = obj.resultFlag;
+                     if (resultFlag == &quot;0&quot;) {
+                         vue.$bus.$emit('wsMessage', { 'type': 'error', 'message': '身份证阅读器异常,请联系管理员.' }, null)
+                     } else if (resultFlag == &quot;2&quot; || resultFlag == &quot;3&quot;) {
+                         vue.$bus.$emit('wsMessage', { 'type': 'error', 'message': '请连接设备.' }, null)
+                     } else if (resultFlag == &quot;4&quot;) {
+                         vue.$bus.$emit('wsMessage', { 'type': 'error', 'message': '请放银行卡.' }, null)
+                         sfzuid = &quot;&quot;;
+                     } else if (resultFlag == &quot;5&quot;) {
+                         vue.$bus.$emit('wsMessage', { 'type': 'error', 'message': '读取银行卡失败,请查银行卡是否有效.' }, null)
+                     } else if (resultFlag == &quot;1&quot;) {
+                         //获得银行卡号
+                         vue.$bus.$emit('wsMessage', { 'error': 'success', 'message': '获得银行卡号.' }, obj)
+                         // document.getElementById(&quot;text_Bank_ID&quot;).value = obj.pBankCardNum; //证件ID
+                     }
+                 } else if (sendFlag == 5) {
+                     // vue.$bus.$emit('wsMessage',{'error':'success','message':'关闭设备成功.'},null)
+                 } else if (sendFlag == 6) {
+                     var obj = JSON.parse(msgM);
+                     //获得版本号
+                     vue.$bus.$emit('wsMessage', { 'type': 'success', 'message': '获得版本号.' }, obj)
+                     // resultMsg(obj.pVersionNum); //版本号
+                 }
+             } else {
+                 vue.$bus.$emit('wsMessage', { 'type': 'error', 'message': '连接异常,请检查是否成功安装驱动.' }, null)
+             }
+         };
+         webSocket.onclose = function (event: any) {
+             //关闭的时候会调用这里
+         }
+     } catch (error) {
+         reject('&quot;连接异常,请检查是否成功安装驱动.&quot;')
+         // alert(&quot;连接异常,请检查是否成功安装驱动.&quot;);
+     }
+ })
+ return promise
+</code></pre>
+<p>},
+// promise池
+}
+dgSocket.prototype.init.prototype = dgSocket.prototype;</p>
+</li>
+</ul>
+<p>//清除BMP图片   imageFormat格式为空时，默认清除格式为bmp图片
+dgSocket.clearImage = function () {
+sendFlag = 1;
+imageFormat = &ldquo;&quot;;//document.getElementById(&ldquo;text_imageFormat&rdquo;).value;
+try {
+webSocket.send(&ldquo;SDT_ClearImages#&rdquo; + imageFormat + &ldquo;#&quot;);
+} catch (error) { }
+}
+//promise池
+dgSocket.promisePool = {}
+//蜂鸣
+dgSocket.posBeep = function () {
+try {
+// webSocket.send(&ldquo;SDT_PosBeep#&quot;);
+} catch (error) { }
+}
+//关闭设备
+dgSocket.closeSocket = function () {
+sendFlag = 5;
+if (webSocket != null) {
+webSocket.close();
+webSocket = null;
+}
+}
+//读取身份信息  JSON
+dgSocket.readIDCard = function () {
+let promise = new Promise((resolve, reject)=&gt;{
+sendFlag = 2;
+try {
+webSocket.send(&ldquo;SDT_Json_ReadIDCard#&quot;); //读取身份Json信息 身份证头像格式默认为bmp
+//webSocket.readyState 3 - 表示连接已经关闭或者连接不能打开。
+// console.log(this.promisePool)
+this.promisePool[&lsquo;SDT_Json_ReadIDCard#'] = {
+resolve,
+reject,
+};
+} catch (error) { reject(error)}
+})
+return promise
+}
+//读取M1卡号  JSON
+dgSocket.readM1Card = function () {
+sendFlag = 3;
+try {
+webSocket.send(&ldquo;SDT_Json_ReadM1Card#&quot;);
+} catch (error) { }
+}
+//读取银行卡号  JSON
+dgSocket.readBankCard = function () {
+sendFlag = 4;
+try {
+webSocket.send(&ldquo;SDT_Json_ReadBankCard#&quot;);
+} catch (error) { }
+}
+//获取版本号  JSON
+dgSocket.readVersionNum = function () {
+sendFlag = 6;
+try {
+webSocket.send(&ldquo;SDT_Open_Reader#&quot;); //获取版本号
+} catch (error) { }
+}
+export default dgSocket;</p>
+<p>`</p>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/jquery%E5%85%A5%E5%8F%A3%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/">Jquery入口简单分析</a></li>
+        
+        <li><a href="/post/web%E6%96%B0%E7%9F%A5%E8%AF%86%E7%82%B9/">Web新知识点</a></li>
+        
+        <li><a href="/post/jquery%E4%B8%AD%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/">Jquery中实用技巧</a></li>
+        
+        <li><a href="/post/%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8%E6%88%96%E8%80%85%E8%AE%A9%E9%A1%B5%E9%9D%A2%E6%BB%9A%E5%8A%A8%E5%B9%B3%E6%BB%91/">回到顶部或者让页面滚动平滑</a></li>
+        
+        <li><a href="/post/input%E8%A1%A8%E5%8D%95%E4%B8%AD%E9%99%90%E5%88%B6%E5%8F%AA%E8%83%BD%E8%BE%93%E5%85%A5%E7%BA%AF%E6%95%B0%E5%AD%97/">Input表单中限制只能输入纯数字</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            没有标签
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+</div>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://souths.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://souths.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://souths.github.io/post/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8/" title="小程序回到顶部">小程序回到顶部</a>
+    </li>
+    
+    <li>
+        <a href="https://souths.github.io/post/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8Compontns%E6%9E%84%E9%80%A0%E9%A1%B5%E9%9D%A2/" title="小程序使用Compontns构造页面">小程序使用Compontns构造页面</a>
+    </li>
+    
+    <li>
+        <a href="https://souths.github.io/post/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E7%BD%AEbackgroundColor%E6%97%A0%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98%E4%BB%A5%E5%8F%8A%E8%AE%BE%E7%BD%AE%E9%A1%B5%E9%9D%A2%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2/" title="微信小程序设置backgroundColor无效的问题,以及设置页面背景颜色">微信小程序设置backgroundColor无效的问题,以及设置页面背景颜色</a>
+    </li>
+    
+    <li>
+        <a href="https://souths.github.io/post/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%96%B0%E5%9D%91flex%E5%B8%83%E5%B1%80%E5%90%8Eimg%E5%AE%BD%E4%B8%8D%E6%98%BE%E7%A4%BA/" title="微信小程序新坑flex布局后img宽不显示">微信小程序新坑flex布局后img宽不显示</a>
+    </li>
+    
+    <li>
+        <a href="https://souths.github.io/post/flex%E5%B8%83%E5%B1%80%E5%AE%9E%E7%8E%B0%E5%85%83%E7%B4%A0%E6%B5%AE%E5%8A%A8%E6%95%88%E6%9E%9C/" title="Flex布局实现元素浮动效果">Flex布局实现元素浮动效果</a>
+    </li>
+    
+    <li>
+        <a href="https://souths.github.io/post/%E4%B8%9C%E4%BF%A1%E6%99%BA%E8%83%BD%E8%AF%BB%E5%8D%A1%E5%99%A8promiseWebSocket%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81/" title="东信智能读卡器,promise,WebSocket结合代码">东信智能读卡器,promise,WebSocket结合代码</a>
+    </li>
+    
+    <li>
+        <a href="https://souths.github.io/post/jquery%E5%85%A5%E5%8F%A3%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/" title="Jquery入口简单分析">Jquery入口简单分析</a>
+    </li>
+    
+    <li>
+        <a href="https://souths.github.io/post/web%E6%96%B0%E7%9F%A5%E8%AF%86%E7%82%B9/" title="Web新知识点">Web新知识点</a>
+    </li>
+    
+    <li>
+        <a href="https://souths.github.io/post/jquery%E4%B8%AD%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/" title="Jquery中实用技巧">Jquery中实用技巧</a>
+    </li>
+    
+    <li>
+        <a href="https://souths.github.io/post/%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8%E6%88%96%E8%80%85%E8%AE%A9%E9%A1%B5%E9%9D%A2%E6%BB%9A%E5%8A%A8%E5%B9%B3%E6%BB%91/" title="回到顶部或者让页面滚动平滑">回到顶部或者让页面滚动平滑</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://souths.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://souths.github.io/">souths的博客 By souths</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/flysnow-org/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+</body>
+
+</html>

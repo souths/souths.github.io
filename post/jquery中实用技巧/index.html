@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Jquery中实用技巧 | souths的博客</title>
+    <meta property="og:title" content="Jquery中实用技巧 - souths的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2019-12-21T17:03:00&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2019-12-21T17:03:00&#43;08:00'>
+        
+    <meta name="Keywords" content="javascript,html,css,souths,node,php,博客,python等语言,公众号,小程序,爱好谈股论金">
+    <meta name="description" content="Jquery中实用技巧">
+        
+    <meta name="author" content="souths">
+    <meta property="og:url" content="https://souths.github.io/post/jquery%E4%B8%AD%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://souths.github.io/">
+                        souths的博客
+                    </a>
+                
+                <p class="description">专注于大前端领域、了解node,php,python等语言,公众号,小程序,爱好谈股论金</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://souths.github.io/">首页</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -220px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        margin: 0 10px;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents"></nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">Jquery中实用技巧</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年12月21日
+        </date>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <pre><code>if语句一定要有大括号包裹, for中表达式写法
+</code></pre><pre><code>    var array = ['Java', 'Python', 'scala']
+    for (let index = array.length - 1, element; (element = array[index]) != null; index--) {
+      console.log(element, index)
+    }
+</code></pre>
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8%E6%88%96%E8%80%85%E8%AE%A9%E9%A1%B5%E9%9D%A2%E6%BB%9A%E5%8A%A8%E5%B9%B3%E6%BB%91/">回到顶部或者让页面滚动平滑</a></li>
+        
+        <li><a href="/post/input%E8%A1%A8%E5%8D%95%E4%B8%AD%E9%99%90%E5%88%B6%E5%8F%AA%E8%83%BD%E8%BE%93%E5%85%A5%E7%BA%AF%E6%95%B0%E5%AD%97/">Input表单中限制只能输入纯数字</a></li>
+        
+        <li><a href="/post/js%E9%AA%8C%E8%AF%81%E6%89%8B%E6%9C%BA%E6%88%96%E8%80%85%E5%9B%BA%E5%AE%9A%E7%94%B5%E8%AF%9D/">Js验证手机或者固定电话</a></li>
+        
+        <li><a href="/post/JS%E7%9A%84splice%E6%96%B9%E6%B3%95%E5%9C%A8for%E5%BE%AA%E7%8E%AF%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%8F%AF%E8%83%BD%E4%BC%9A%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">JS的splice方法在for循环中使用可能会遇到的问题</a></li>
+        
+        <li><a href="/post/element-ui%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E8%8F%9C%E5%8D%95el-menu%E9%AB%98%E4%BA%AE%E9%97%AE%E9%A2%98/">Element Ui动态设置菜单（el Menu）高亮问题</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            没有标签
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+</div>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://souths.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://souths.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://souths.github.io/post/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8/" title="小程序回到顶部">小程序回到顶部</a>
+    </li>
+    
+    <li>
+        <a href="https://souths.github.io/post/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8Compontns%E6%9E%84%E9%80%A0%E9%A1%B5%E9%9D%A2/" title="小程序使用Compontns构造页面">小程序使用Compontns构造页面</a>
+    </li>
+    
+    <li>
+        <a href="https://souths.github.io/post/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E7%BD%AEbackgroundColor%E6%97%A0%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98%E4%BB%A5%E5%8F%8A%E8%AE%BE%E7%BD%AE%E9%A1%B5%E9%9D%A2%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2/" title="微信小程序设置backgroundColor无效的问题,以及设置页面背景颜色">微信小程序设置backgroundColor无效的问题,以及设置页面背景颜色</a>
+    </li>
+    
+    <li>
+        <a href="https://souths.github.io/post/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%96%B0%E5%9D%91flex%E5%B8%83%E5%B1%80%E5%90%8Eimg%E5%AE%BD%E4%B8%8D%E6%98%BE%E7%A4%BA/" title="微信小程序新坑flex布局后img宽不显示">微信小程序新坑flex布局后img宽不显示</a>
+    </li>
+    
+    <li>
+        <a href="https://souths.github.io/post/flex%E5%B8%83%E5%B1%80%E5%AE%9E%E7%8E%B0%E5%85%83%E7%B4%A0%E6%B5%AE%E5%8A%A8%E6%95%88%E6%9E%9C/" title="Flex布局实现元素浮动效果">Flex布局实现元素浮动效果</a>
+    </li>
+    
+    <li>
+        <a href="https://souths.github.io/post/%E4%B8%9C%E4%BF%A1%E6%99%BA%E8%83%BD%E8%AF%BB%E5%8D%A1%E5%99%A8promiseWebSocket%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81/" title="东信智能读卡器,promise,WebSocket结合代码">东信智能读卡器,promise,WebSocket结合代码</a>
+    </li>
+    
+    <li>
+        <a href="https://souths.github.io/post/jquery%E5%85%A5%E5%8F%A3%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/" title="Jquery入口简单分析">Jquery入口简单分析</a>
+    </li>
+    
+    <li>
+        <a href="https://souths.github.io/post/web%E6%96%B0%E7%9F%A5%E8%AF%86%E7%82%B9/" title="Web新知识点">Web新知识点</a>
+    </li>
+    
+    <li>
+        <a href="https://souths.github.io/post/jquery%E4%B8%AD%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/" title="Jquery中实用技巧">Jquery中实用技巧</a>
+    </li>
+    
+    <li>
+        <a href="https://souths.github.io/post/%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8%E6%88%96%E8%80%85%E8%AE%A9%E9%A1%B5%E9%9D%A2%E6%BB%9A%E5%8A%A8%E5%B9%B3%E6%BB%91/" title="回到顶部或者让页面滚动平滑">回到顶部或者让页面滚动平滑</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://souths.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://souths.github.io/">souths的博客 By souths</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/flysnow-org/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+</body>
+
+</html>
