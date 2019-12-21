@@ -6,16 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>404 Page not found | souths的博客</title>
-    <meta property="og:title" content="404 Page not found - souths的博客">
+    <title>小程序使用Compontns构造页面 | souths的博客</title>
+    <meta property="og:title" content="小程序使用Compontns构造页面 - souths的博客">
     <meta property="og:type" content="article">
         
+    <meta property="article:published_time" content='2019-12-21T17:13:54&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2019-12-21T17:13:54&#43;08:00'>
         
     <meta name="Keywords" content="javascript,html,css,souths,node,php,博客,python等语言,公众号,小程序,爱好谈股论金">
-    <meta name="description" content="404 Page not found">
+    <meta name="description" content="小程序使用Compontns构造页面">
         
     <meta name="author" content="souths">
-    <meta property="og:url" content="https://souths.github.io/404.html">
+    <meta property="og:url" content="https://souths.github.io/post/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8Compontns%E6%9E%84%E9%80%A0%E9%A1%B5%E9%9D%A2/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
@@ -48,7 +52,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="https://souths.github.io/">首页</a>
+                    <a class="current" href="https://souths.github.io/">首页</a>
                     
                 </nav>
             </div>
@@ -62,24 +66,168 @@
 
                 <div class="col-8" id="main">
                     
-<div class="body404">
-    <div class="info404">
-        <header id="header404" class="clearfix">
-            <div class="site-name404"><i>404</i></div>
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -220px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        margin: 0 10px;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents"></nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">小程序使用Compontns构造页面</h1>
         </header>
-        <section>
-            <div class="title404">
-                <p>每一个平凡的日常<br />都是连续发生中的奇迹</p>
-            </div>
-            
+        <date class="post-meta meta-date">
+            2019年12月21日
+        </date>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <p>js文件</p>
+<pre><code>const app =  getApp();
+//自定义组件  https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/
+//使用 Component 构造器构造页面  https://developers.weixin.qq.com/miniprogram/dev/reference/api/Component.html
+Component({
+  behaviors: [],//类似于mixins和traits的组件间代码复用机制
+  properties: {
+    //组件的对外属性，是属性名到属性设置的映射表
+  },
+  data:{
+    family_list:[]
+  },
+  lifetimes: {
+    // 生命周期函数，可以为函数，或一个在methods段中定义的方法名
+    attached: function () { },
+    moved: function () { },
+    detached: function () { },
+  },
+  pageLifetimes: {
+    // 组件所在页面的生命周期函数
+    show: function () {},
+    hide: function () { },
+    resize: function () { },
+  },
+  methods: {
+    //页面的生命周期方法（即 on 开头的方法)==开始
+    onLoad (options) {
+    },
+    onShow(){
+
+    },
+    onHide(){
+      console.log('onh')
+    },
+    //页面的生命周期方法（即 on 开头的方法)==结束
+  }
+
+})
+</code></pre><p>json文件</p>
+<pre><code>{
+  &quot;navigationBarBackgroundColor&quot;: &quot;#ffffff&quot;,
+  &quot;navigationBarTextStyle&quot;: &quot;black&quot;,
+  &quot;navigationBarTitleText&quot;: &quot;儿童健康管理&quot;,
+  &quot;backgroundColor&quot;: &quot;#eeeeee&quot;,
+  &quot;backgroundTextStyle&quot;: &quot;light&quot;,
+  &quot;usingComponents&quot;: {}
+}
+</code></pre>
+        </div>
+
+        
+
+
+        
 
 <div class="post-archive">
     <h2>See Also</h2>
     <ul class="listing">
-        
-        <li><a href="/post/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8/">小程序回到顶部</a></li>
-        
-        <li><a href="/post/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8Compontns%E6%9E%84%E9%80%A0%E9%A1%B5%E9%9D%A2/">小程序使用Compontns构造页面</a></li>
         
         <li><a href="/post/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E7%BD%AEbackgroundColor%E6%97%A0%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98%E4%BB%A5%E5%8F%8A%E8%AE%BE%E7%BD%AE%E9%A1%B5%E9%9D%A2%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2/">微信小程序设置backgroundColor无效的问题,以及设置页面背景颜色</a></li>
         
@@ -87,12 +235,25 @@
         
         <li><a href="/post/flex%E5%B8%83%E5%B1%80%E5%AE%9E%E7%8E%B0%E5%85%83%E7%B4%A0%E6%B5%AE%E5%8A%A8%E6%95%88%E6%9E%9C/">Flex布局实现元素浮动效果</a></li>
         
+        <li><a href="/post/%E4%B8%9C%E4%BF%A1%E6%99%BA%E8%83%BD%E8%AF%BB%E5%8D%A1%E5%99%A8promiseWebSocket%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81/">东信智能读卡器,promise,WebSocket结合代码</a></li>
+        
+        <li><a href="/post/jquery%E5%85%A5%E5%8F%A3%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/">Jquery入口简单分析</a></li>
+        
     </ul>
 </div>
 
-            <a rel="nofollow" href="https://souths.github.io/" class="index404">回首页看看</a>
-        </section>
-    </div>
+
+        <div class="post-meta meta-tags">
+            
+            没有标签
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
 </div>
 
                 </div>
@@ -191,6 +352,17 @@
     </div>
 </footer>
 
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 
 <a id="rocket" href="#top"></a>

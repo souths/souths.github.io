@@ -67,7 +67,7 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://souths.github.io/post/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8/" title="小程序回到顶部">小程序回到顶部</a>
+                <a href="https://souths.github.io/post/input%E8%A1%A8%E5%8D%95%E4%B8%AD%E9%99%90%E5%88%B6%E5%8F%AA%E8%83%BD%E8%BE%93%E5%85%A5%E7%BA%AF%E6%95%B0%E5%AD%97/" title="Input表单中限制只能输入纯数字">Input表单中限制只能输入纯数字</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
@@ -75,15 +75,15 @@
         </date>
         
         <div class="post-content">
-            wx.pageScrollTo({ scrollTop: 0 })……
+            &lt;input class=&quot;el-input__inner&quot; v-model=&quot;scope.row.total_num&quot; @input=&quot;pureNumber(scope.row)&quot; placeholder=&quot;请输入评分,纯数字&quot;&gt; pureNumber (row:any) { // 实时把非数字的输入过滤掉 row.total_num = row.total_num.match(/\d/ig) ? row.total_num.match(/\d/ig).join('') : '' }……
         </div>
-        <p class="readmore"><a href="https://souths.github.io/post/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8/">阅读全文</a></p>
+        <p class="readmore"><a href="https://souths.github.io/post/input%E8%A1%A8%E5%8D%95%E4%B8%AD%E9%99%90%E5%88%B6%E5%8F%AA%E8%83%BD%E8%BE%93%E5%85%A5%E7%BA%AF%E6%95%B0%E5%AD%97/">阅读全文</a></p>
     </article>
     
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://souths.github.io/post/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8Compontns%E6%9E%84%E9%80%A0%E9%A1%B5%E9%9D%A2/" title="小程序使用Compontns构造页面">小程序使用Compontns构造页面</a>
+                <a href="https://souths.github.io/post/js%E9%AA%8C%E8%AF%81%E6%89%8B%E6%9C%BA%E6%88%96%E8%80%85%E5%9B%BA%E5%AE%9A%E7%94%B5%E8%AF%9D/" title="Js验证手机或者固定电话">Js验证手机或者固定电话</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
@@ -91,15 +91,15 @@
         </date>
         
         <div class="post-content">
-            js文件 const app = getApp(); //自定义组件 https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/ //使用 Component 构造器构造页面 https://developers.weixin.qq.com/miniprogram/dev/reference/api/Component.html Component({ behaviors: [],//类似于mixins和traits的组件间代码复用机制 properties: { //组件的对外属性，是属性名到属性设置的映射表 }, data:{ family_list:[] }, lifetimes: { // 生命周期函数，可以为函数，或一个在methods段中定义的方法名 attached: function () { }, moved: function () { }, detached: function () {……
+            /^1\d{10}$|^(0\d{2,3}-?|\(0\d{2,3}\))?[1-9]\d{4,7}(-\d{1,8})?$/.test(value) 规则说明： 1、可以是1开头的11位数字（手机号） 2、可以是“区号-电话号-分机号”或者是“(区号)电话号-分机号”格式 3、区号是0开头的3～4位数字，可以没有区号 4、电话号是5～8位数字，不能以0开头 5、分机号是1～8位数字，可以没有分机号……
         </div>
-        <p class="readmore"><a href="https://souths.github.io/post/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8Compontns%E6%9E%84%E9%80%A0%E9%A1%B5%E9%9D%A2/">阅读全文</a></p>
+        <p class="readmore"><a href="https://souths.github.io/post/js%E9%AA%8C%E8%AF%81%E6%89%8B%E6%9C%BA%E6%88%96%E8%80%85%E5%9B%BA%E5%AE%9A%E7%94%B5%E8%AF%9D/">阅读全文</a></p>
     </article>
     
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://souths.github.io/post/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E7%BD%AEbackgroundColor%E6%97%A0%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98%E4%BB%A5%E5%8F%8A%E8%AE%BE%E7%BD%AE%E9%A1%B5%E9%9D%A2%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2/" title="微信小程序设置backgroundColor无效的问题,以及设置页面背景颜色">微信小程序设置backgroundColor无效的问题,以及设置页面背景颜色</a>
+                <a href="https://souths.github.io/post/JS%E7%9A%84splice%E6%96%B9%E6%B3%95%E5%9C%A8for%E5%BE%AA%E7%8E%AF%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%8F%AF%E8%83%BD%E4%BC%9A%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" title="JS的splice方法在for循环中使用可能会遇到的问题">JS的splice方法在for循环中使用可能会遇到的问题</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
@@ -107,15 +107,15 @@
         </date>
         
         <div class="post-content">
-            当我们在微信小程序 json 中设置 backgroundColor 时，实际在电脑的模拟器中根本看不到效果。 这是因为 backgroundColor 指的窗体背景颜色，而不是页面的背景颜色，即窗体下拉刷新或上拉加载时露出的背景。在电脑的模拟器中是看不到这个动作的，所以会让人误以为这个配置是无效的。 如果要设置页面背景颜色，得在 wxss 中自定义样式，如下： page {……
+            在写JS代码时，我们常常使用 splice 函数来删除数组中的元素，因为 splice 函数会直接对数组进行修改，从而不需再自己写一个算法来移动数组中的其他元素填补到被删除的位置。splice 功能十分强大，除了可以删除数组的元素之外，还可以删除的同时添加新的元素到删除的位置等等用法。介绍 splice 的删除数组元素的用……
         </div>
-        <p class="readmore"><a href="https://souths.github.io/post/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E7%BD%AEbackgroundColor%E6%97%A0%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98%E4%BB%A5%E5%8F%8A%E8%AE%BE%E7%BD%AE%E9%A1%B5%E9%9D%A2%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2/">阅读全文</a></p>
+        <p class="readmore"><a href="https://souths.github.io/post/JS%E7%9A%84splice%E6%96%B9%E6%B3%95%E5%9C%A8for%E5%BE%AA%E7%8E%AF%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%8F%AF%E8%83%BD%E4%BC%9A%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">阅读全文</a></p>
     </article>
     
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://souths.github.io/post/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%96%B0%E5%9D%91flex%E5%B8%83%E5%B1%80%E5%90%8Eimg%E5%AE%BD%E4%B8%8D%E6%98%BE%E7%A4%BA/" title="微信小程序新坑flex布局后img宽不显示">微信小程序新坑flex布局后img宽不显示</a>
+                <a href="https://souths.github.io/post/element-ui%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E8%8F%9C%E5%8D%95el-menu%E9%AB%98%E4%BA%AE%E9%97%AE%E9%A2%98/" title="Element Ui动态设置菜单（el Menu）高亮问题">Element Ui动态设置菜单（el Menu）高亮问题</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
@@ -123,15 +123,15 @@
         </date>
         
         <div class="post-content">
-            异常分析 由于flex默认为所有子元素横向布局，所以其他元素会对img元素造成挤压，从而呈现img的宽度为0的假象 解决方法 flex布局时设置flex-wrap: wrap;使元素自动换行，不挤压现有元素……
+            通过获取到元素，然后设置activeIndex 来进行动态高亮 javascript写法 &lt;el-menu ref=&quot;kzMenu&quot; ... &gt; $route (route) { // hack // 直接改变变量，没想到好的方法 // element-ui elMenu的items是缓存起来的 // list的改变不能改改items里面的key值 this.$refs.myMenu.activedIndex = route.path } typescript写法： &lt;el-menu ref=&quot;kzMenu&quot; ... &gt; // 监听路由 @Watch(&quot;$route&quot;) onRouteChanged(to: any, from:……
         </div>
-        <p class="readmore"><a href="https://souths.github.io/post/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%96%B0%E5%9D%91flex%E5%B8%83%E5%B1%80%E5%90%8Eimg%E5%AE%BD%E4%B8%8D%E6%98%BE%E7%A4%BA/">阅读全文</a></p>
+        <p class="readmore"><a href="https://souths.github.io/post/element-ui%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E8%8F%9C%E5%8D%95el-menu%E9%AB%98%E4%BA%AE%E9%97%AE%E9%A2%98/">阅读全文</a></p>
     </article>
     
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://souths.github.io/post/flex%E5%B8%83%E5%B1%80%E5%AE%9E%E7%8E%B0%E5%85%83%E7%B4%A0%E6%B5%AE%E5%8A%A8%E6%95%88%E6%9E%9C/" title="Flex布局实现元素浮动效果">Flex布局实现元素浮动效果</a>
+                <a href="https://souths.github.io/post/for%E5%BE%AA%E7%8E%AF%E4%B8%AD%E6%8B%B7%E8%B4%9D%E5%AF%B9%E8%B1%A1%E7%BB%99%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%88%B0%E6%95%B0%E7%BB%84%E4%B8%AD/" title="For循环中拷贝对象给另外一个对象并添加到数组中">For循环中拷贝对象给另外一个对象并添加到数组中</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
@@ -139,15 +139,15 @@
         </date>
         
         <div class="post-content">
-            容器元素css设置:display:flex; flex-wrap: wrap; 子元素css固定宽度高度……
+            var i,item,li,list=[]; for(i=0;i&lt;imgList.length;i++){ item=imgList[i]; li={ compressImageName:item.smallImagePath, compressImagePath :item.smallImageUrl, originImageName : item.imagePath, originImagePath : item.imageUrl, seq :i, $$hashKey:item.$$hashKey, uuid:item.uuid }; list.push(li); } /*imgList是一个数组,数组里面是多个对象,把这多个对象拷贝到li对象中,li对象中是每个键值对都跟imgList中的对象一样,并且得到imgList中的每个对象,而不是只得到最后一个,类似于实现深拷贝*/……
         </div>
-        <p class="readmore"><a href="https://souths.github.io/post/flex%E5%B8%83%E5%B1%80%E5%AE%9E%E7%8E%B0%E5%85%83%E7%B4%A0%E6%B5%AE%E5%8A%A8%E6%95%88%E6%9E%9C/">阅读全文</a></p>
+        <p class="readmore"><a href="https://souths.github.io/post/for%E5%BE%AA%E7%8E%AF%E4%B8%AD%E6%8B%B7%E8%B4%9D%E5%AF%B9%E8%B1%A1%E7%BB%99%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%88%B0%E6%95%B0%E7%BB%84%E4%B8%AD/">阅读全文</a></p>
     </article>
     
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://souths.github.io/post/%E4%B8%9C%E4%BF%A1%E6%99%BA%E8%83%BD%E8%AF%BB%E5%8D%A1%E5%99%A8promiseWebSocket%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81/" title="东信智能读卡器,promise,WebSocket结合代码">东信智能读卡器,promise,WebSocket结合代码</a>
+                <a href="https://souths.github.io/post/JS%E8%8E%B7%E5%8F%96%E4%B8%8A%E4%B8%80%E8%AE%BF%E9%97%AE%E9%A1%B5%E9%9D%A2URL%E5%9C%B0%E5%9D%80document.referrer%E5%AE%9E%E8%B7%B5/" title="JS获取上一访问页面URL地址document">JS获取上一访问页面URL地址document</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
@@ -155,15 +155,15 @@
         </date>
         
         <div class="post-content">
-            ` /** 用法 import dgSocket from &ldquo;@/common/ts/dgSocket&rdquo;; //钩子函数中对dgSocket进行初始化和使用this.$bus.$on('wsMessage',({type,message}:any,data:any)=&gt;{})监听数据的变化 type:&lsquo;error'|'success&rsquo; message:&lsquo;提示的文字&rsquo; data:只有获取数……
+            http://www.zhangxinxu.com/wordpress/2017/02/js-page-url-document-referrer/(jS获取上一访问页面URL地址document.referrer实践) 这篇文章发布于 2017年02月13日，星期一，22:55，归……
         </div>
-        <p class="readmore"><a href="https://souths.github.io/post/%E4%B8%9C%E4%BF%A1%E6%99%BA%E8%83%BD%E8%AF%BB%E5%8D%A1%E5%99%A8promiseWebSocket%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81/">阅读全文</a></p>
+        <p class="readmore"><a href="https://souths.github.io/post/JS%E8%8E%B7%E5%8F%96%E4%B8%8A%E4%B8%80%E8%AE%BF%E9%97%AE%E9%A1%B5%E9%9D%A2URL%E5%9C%B0%E5%9D%80document.referrer%E5%AE%9E%E8%B7%B5/">阅读全文</a></p>
     </article>
     
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://souths.github.io/post/jquery%E5%85%A5%E5%8F%A3%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/" title="Jquery入口简单分析">Jquery入口简单分析</a>
+                <a href="https://souths.github.io/post/FileReader%E4%B8%8EURL.createObjectURL%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E8%A7%86%E9%A2%91%E4%B8%8A%E4%BC%A0%E9%A2%84%E8%A7%88/" title="FileReader与URL.createObjectURL实现图片、视频上传预览">FileReader与URL.createObjectURL实现图片、视频上传预览</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
@@ -171,15 +171,15 @@
         </date>
         
         <div class="post-content">
-            var aQuery = function (selector, context) { return new aQuery.prototype.init(); } aQuery.prototype = { constructor: aQuery, init: function () { this.v = 'vvv' console.log(this.age,'=&gt;age'); // 20 =&gt;age return this; }, name: function () { console.log(arguments); console.log(this.age); //20 console.log(this.v); // vv return this.age }, age: 20 } aQuery.prototype.init.prototype = aQuery.prototype; console.log(aQuery().name()) //20……
+            &lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;FileReader与URL.createObjectURL实现图片、视频上传预览&lt;/title&gt; &lt;style&gt; * { box-sizing: border-box; } .section { margin: 20px auto; width: 500px; border: 1px solid #666; text-align: center; } .preview { width: 100%; margin-top: 10px; padding: 10px; min-height: 100px; background-color: #999; } .preview img, .preview video { width: 100%; } &lt;/style&gt; &lt;script src=&quot;https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt; &lt;/head&gt; &lt;!--文章https://ju……
         </div>
-        <p class="readmore"><a href="https://souths.github.io/post/jquery%E5%85%A5%E5%8F%A3%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/">阅读全文</a></p>
+        <p class="readmore"><a href="https://souths.github.io/post/FileReader%E4%B8%8EURL.createObjectURL%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E8%A7%86%E9%A2%91%E4%B8%8A%E4%BC%A0%E9%A2%84%E8%A7%88/">阅读全文</a></p>
     </article>
     
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://souths.github.io/post/web%E6%96%B0%E7%9F%A5%E8%AF%86%E7%82%B9/" title="Web新知识点">Web新知识点</a>
+                <a href="https://souths.github.io/post/%E6%AD%A3%E5%88%99%E6%94%B6%E9%9B%86/" title="正则收集">正则收集</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
@@ -187,15 +187,15 @@
         </date>
         
         <div class="post-content">
-            WebAssembly，Service worker，webgpu，webgl，Web Workers electron……
+            var validatePatterns = { // &quot;required&quot;: [/^[\S+\s*\S+]+$/ig, &quot;不能为空！&quot;], &quot;required&quot;: [/^\s*$/g, &quot;不能为空！&quot;], &quot;integer&quot;: [/^(0|[1-9][0-9]*)$/, &quot;必须为整数！&quot;], &quot;numeric&quot;: [/^\d+(\.\d+)?$/, &quot;不是合法的数字！&quot;], &quot;currency&quot;: [/^\d+\.\d{1,2}$/, &quot;不是合法的货币数字！&quot;], &quot;email&quot;: [/^\w+@\w+(\.\w+)*$/, &quot;不合法的email输入！&……
         </div>
-        <p class="readmore"><a href="https://souths.github.io/post/web%E6%96%B0%E7%9F%A5%E8%AF%86%E7%82%B9/">阅读全文</a></p>
+        <p class="readmore"><a href="https://souths.github.io/post/%E6%AD%A3%E5%88%99%E6%94%B6%E9%9B%86/">阅读全文</a></p>
     </article>
     
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://souths.github.io/post/jquery%E4%B8%AD%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/" title="Jquery中实用技巧">Jquery中实用技巧</a>
+                <a href="https://souths.github.io/post/%E6%96%87%E7%AB%A0%E5%88%86%E4%BA%AB/" title="文章分享">文章分享</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
@@ -203,15 +203,15 @@
         </date>
         
         <div class="post-content">
-            if语句一定要有大括号包裹, for中表达式写法 var array = ['Java', 'Python', 'scala'] for (let index = array.length - 1, element; (element = array[index]) != null; index--) { console.log(element, index) }……
+            http://hao.jser.com/archive/19370/(*********************************个人分享–WEB前端学习资源分享*************************) https://juejin.im/entry/5a1d31……
         </div>
-        <p class="readmore"><a href="https://souths.github.io/post/jquery%E4%B8%AD%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/">阅读全文</a></p>
+        <p class="readmore"><a href="https://souths.github.io/post/%E6%96%87%E7%AB%A0%E5%88%86%E4%BA%AB/">阅读全文</a></p>
     </article>
     
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://souths.github.io/post/%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8%E6%88%96%E8%80%85%E8%AE%A9%E9%A1%B5%E9%9D%A2%E6%BB%9A%E5%8A%A8%E5%B9%B3%E6%BB%91/" title="回到顶部或者让页面滚动平滑">回到顶部或者让页面滚动平滑</a>
+                <a href="https://souths.github.io/post/setTou%E4%B8%80%E6%AC%A1%E5%AE%9A%E6%97%B6%E5%99%A8%E5%81%9A%E5%BE%AA%E7%8E%AF%E4%BD%BF%E7%94%A8/" title="SetTou一次定时器做循环使用">SetTou一次定时器做循环使用</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
@@ -219,9 +219,9 @@
         </date>
         
         <div class="post-content">
-            &lt;div id=&quot;top31&quot;&gt; 以下是回到顶部代码 document.querySelector(`#top31`).scrollIntoView({ behavior: &quot;smooth&quot; }); CSS scroll-behavior和JS scrollIntoView让页面滚动平滑 https://www.zhangxinxu.com/wordpress/2018/10/scroll-behavior-scrollintoview-%E5%B9%B3%E6%BB%91%E6%BB%9A%E5%8A%A8/#……
+            var num = 5 var timer = '' fn() function fn() { timer = setTimeout(function () { num--; se.innerHTML = &quot;&quot;+num+&quot;S 后返回&quot; if(num==0){ clearTimeout(timer) return; } fn() },1000) }……
         </div>
-        <p class="readmore"><a href="https://souths.github.io/post/%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8%E6%88%96%E8%80%85%E8%AE%A9%E9%A1%B5%E9%9D%A2%E6%BB%9A%E5%8A%A8%E5%B9%B3%E6%BB%91/">阅读全文</a></p>
+        <p class="readmore"><a href="https://souths.github.io/post/setTou%E4%B8%80%E6%AC%A1%E5%AE%9A%E6%97%B6%E5%99%A8%E5%81%9A%E5%BE%AA%E7%8E%AF%E4%BD%BF%E7%94%A8/">阅读全文</a></p>
     </article>
     
     
@@ -230,13 +230,17 @@
 
 <ol class="page-navigator">
     
+    <li class="prev">
+        <a href="https://souths.github.io/">上一页</a>
+    </li>
+    
 
     
-    <li  class="current">
+    <li >
         <a href="https://souths.github.io/">1</a>
     </li>
     
-    <li >
+    <li  class="current">
         <a href="https://souths.github.io/page/2/">2</a>
     </li>
     
@@ -247,7 +251,7 @@
 
     
     <li class="next">
-        <a href="https://souths.github.io/page/2/">下一页</a>
+        <a href="https://souths.github.io/page/3/">下一页</a>
     </li>
     
 </ol>

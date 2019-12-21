@@ -69,7 +69,7 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://souths.github.io/post/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8/" title="小程序回到顶部">小程序回到顶部</a>
+                <a href="https://souths.github.io/post/vuexmodules%E7%9A%84store/" title="Vuex（modules的store）">Vuex（modules的store）</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
@@ -77,9 +77,9 @@
         </date>
         
         <div class="post-content">
-            wx.pageScrollTo({ scrollTop: 0 })……
+            modules文件夹下的user.js export default{ namespaced: true, state: { 'uu':'modules+++' }, actions: { userMM({commit},msg){ commit('userMu',msg) } }, mutations: { userMu(state,msg){ state.uu = msg } }, getters: { getU(state){ return state.uu } } } actions.js const actions = { mm({commit,rootState},msg){ commit('mxx',msg) } } export default actions getters.js const getters = { gettVuex(state){ return state.msg } } export default getters index.js import Vue from 'vue' import Vuex from 'vuex' import mutations from './mutations' import actions from './actions' import state from './state' import getters from './getters' import user from './modules/user' Vue.use(Vuex) export default new Vuex.Store({ strict: true, modules:{ user }, mutations, actions, state, getters }) index.vue &lt;template&gt; &lt;div&gt; 首页 &lt;button @click=&quot;btn&quot;&gt;btn&lt;/button&gt; &lt;div&gt;{{'xx'|time}}&lt;/div&gt; &lt;div&gt;{{gettVuex}}&lt;/div&gt; &lt;div&gt;{{getU}}&lt;/div&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; import transitionName from '@/mixin/transitionName' import {mapGetters} from 'vuex' export……
         </div>
-        <p class="readmore"><a href="https://souths.github.io/post/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8/">阅读全文</a></p>
+        <p class="readmore"><a href="https://souths.github.io/post/vuexmodules%E7%9A%84store/">阅读全文</a></p>
     </article>
     
     
@@ -87,7 +87,7 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://souths.github.io/post/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8Compontns%E6%9E%84%E9%80%A0%E9%A1%B5%E9%9D%A2/" title="小程序使用Compontns构造页面">小程序使用Compontns构造页面</a>
+                <a href="https://souths.github.io/post/vuexstore/" title="Vuex（store）">Vuex（store）</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
@@ -95,9 +95,9 @@
         </date>
         
         <div class="post-content">
-            js文件 const app = getApp(); //自定义组件 https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/ //使用 Component 构造器构造页面 https://developers.weixin.qq.com/miniprogram/dev/reference/api/Component.html Component({ behaviors: [],//类似于mixins和traits的组件间代码复用机制 properties: { //组件的对外属性，是属性名到属性设置的映射表 }, data:{ family_list:[] }, lifetimes: { // 生命周期函数，可以为函数，或一个在methods段中定义的方法名 attached: function () { }, moved: function () { }, detached: function () {……
+            actions.js /*import * as types from './types' export default { USER_SIGNIN: ({commit}, form) = &gt; { commit(types.USER_SIGNIN,form) }, USER_SIGNOUT:({commit}) =&gt;{ commit(types.USER_SIGNOUT) } }*/ getters.js /*export default { iuser:(state)=&gt;{ return state.user } }*/ index.js /* import Vue from 'vue' import Vuex from 'vuex' import mutations from './mutations' import actions from './actions' Vue.use(Vuex); export default new Vuex.Store({ modules:{ mutations }, actions }) */ mutations.js /* import {USER_SIGNIN, USER_SIGNOUT,} from './types' import getters from './getters' import Vue from 'vue' const state = { user:JSON.parse(localStorage.getItem('user')) || {}, //user:JSON.parse(sessionStorage.getItem('user')) || {}, } const mutations = { [USER_SIGNIN](state,from){ if(state.user==undefined){ state.user={} } localStorage.setItem('user', JSON.stringify(from)) //sessionStorage.setItem('user', JSON.stringify(from)) Object.assign(state.user, from) }, [USER_SIGNOUT](state){ localStorage.removeItem('user') //sessionStorage.removeItem('user') Object.keys(state).forEach(k =&gt; Vue.delete(state, k)) } } export default { state, mutations, getters } */ types.js /* export const USER_SIGNIN = 'USER_SIGNIN' //登录成功 export const USER_SIGNOUT = 'USER_SIGNOUT' //退……
         </div>
-        <p class="readmore"><a href="https://souths.github.io/post/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8Compontns%E6%9E%84%E9%80%A0%E9%A1%B5%E9%9D%A2/">阅读全文</a></p>
+        <p class="readmore"><a href="https://souths.github.io/post/vuexstore/">阅读全文</a></p>
     </article>
     
     
@@ -105,7 +105,7 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://souths.github.io/post/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E7%BD%AEbackgroundColor%E6%97%A0%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98%E4%BB%A5%E5%8F%8A%E8%AE%BE%E7%BD%AE%E9%A1%B5%E9%9D%A2%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2/" title="微信小程序设置backgroundColor无效的问题,以及设置页面背景颜色">微信小程序设置backgroundColor无效的问题,以及设置页面背景颜色</a>
+                <a href="https://souths.github.io/post/localStorage-sessionStorage/" title="LocalStorage SessionStorage">LocalStorage SessionStorage</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
@@ -113,9 +113,9 @@
         </date>
         
         <div class="post-content">
-            当我们在微信小程序 json 中设置 backgroundColor 时，实际在电脑的模拟器中根本看不到效果。 这是因为 backgroundColor 指的窗体背景颜色，而不是页面的背景颜色，即窗体下拉刷新或上拉加载时露出的背景。在电脑的模拟器中是看不到这个动作的，所以会让人误以为这个配置是无效的。 如果要设置页面背景颜色，得在 wxss 中自定义样式，如下： page {……
+            /*localStorage的API 获取键值对数量 localStorage.length 读取 localStorage.getItem('name'), localStorage.key(i) 添加/修改 localStorage.setItem('name','xuanyuan') 删除对应键值 localStorage.removeItem('name') 删除所有数据 localStorage.clear() 存储：localStorage.setItem('data',JSON.stringify(data.body.data)); 获取：JSON.parse(localStorage.……
         </div>
-        <p class="readmore"><a href="https://souths.github.io/post/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E7%BD%AEbackgroundColor%E6%97%A0%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98%E4%BB%A5%E5%8F%8A%E8%AE%BE%E7%BD%AE%E9%A1%B5%E9%9D%A2%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2/">阅读全文</a></p>
+        <p class="readmore"><a href="https://souths.github.io/post/localStorage-sessionStorage/">阅读全文</a></p>
     </article>
     
     
@@ -123,7 +123,7 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://souths.github.io/post/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%96%B0%E5%9D%91flex%E5%B8%83%E5%B1%80%E5%90%8Eimg%E5%AE%BD%E4%B8%8D%E6%98%BE%E7%A4%BA/" title="微信小程序新坑flex布局后img宽不显示">微信小程序新坑flex布局后img宽不显示</a>
+                <a href="https://souths.github.io/post/vue%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/" title="Vue图片路径引用问题">Vue图片路径引用问题</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
@@ -131,9 +131,9 @@
         </date>
         
         <div class="post-content">
-            异常分析 由于flex默认为所有子元素横向布局，所以其他元素会对img元素造成挤压，从而呈现img的宽度为0的假象 解决方法 flex布局时设置flex-wrap: wrap;使元素自动换行，不挤压现有元素……
+            在vue项目中正确引用图片的示例(打包也可以正常显示): &lt;img :src=&quot;searchMap&quot; alt=&quot;地图icon&quot; class=&quot;searchMap&quot;&gt; data() { return { msg: &quot;我是shopmailvue&quot;, searchMap: require(&quot;../../assets/images//searchMap.png&quot;) }; }, 谨防图片路径被当做字符串处理,而不能显示图片 http://blog.csdn.net/letasian/article/details/76219889 当我们在Vue.js项目中引用图片时，关于图片路径有以下几……
         </div>
-        <p class="readmore"><a href="https://souths.github.io/post/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%96%B0%E5%9D%91flex%E5%B8%83%E5%B1%80%E5%90%8Eimg%E5%AE%BD%E4%B8%8D%E6%98%BE%E7%A4%BA/">阅读全文</a></p>
+        <p class="readmore"><a href="https://souths.github.io/post/vue%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/">阅读全文</a></p>
     </article>
     
     
@@ -141,7 +141,7 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://souths.github.io/post/flex%E5%B8%83%E5%B1%80%E5%AE%9E%E7%8E%B0%E5%85%83%E7%B4%A0%E6%B5%AE%E5%8A%A8%E6%95%88%E6%9E%9C/" title="Flex布局实现元素浮动效果">Flex布局实现元素浮动效果</a>
+                <a href="https://souths.github.io/post/vue%E5%92%8Ccss3%E5%81%9A%E5%AF%BC%E8%88%AA%E6%A0%8F/" title="Vue和css3做导航栏">Vue和css3做导航栏</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
@@ -149,9 +149,9 @@
         </date>
         
         <div class="post-content">
-            容器元素css设置:display:flex; flex-wrap: wrap; 子元素css固定宽度高度……
+            &lt;!DOCTYPE html&gt; &lt;!--也许 Vue+CSS3 做交互特效更简单https://juejin.im/post/5a121e4b6fb9a045076f41a3--&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;Title&lt;/title&gt; &lt;/head&gt; &lt;style&gt; body{ margin: 0px; padding: 0px; } .nav{ margin: 40px; position: relative; } .nav li{ float: left; width: 100px; height: 40px; line-height: 40px; color: #fff; text-align: center; background: #09f; cursor: pointer; list-style: none; } .nav span{ position: relative; z-index: 2; } .nav .slider{ position: absolute; transition: all .5s cubic-bezier(0.4, -0.3, 0.57, 1.38); width: 100px; height: 40px; background: #f90; top: 0;……
         </div>
-        <p class="readmore"><a href="https://souths.github.io/post/flex%E5%B8%83%E5%B1%80%E5%AE%9E%E7%8E%B0%E5%85%83%E7%B4%A0%E6%B5%AE%E5%8A%A8%E6%95%88%E6%9E%9C/">阅读全文</a></p>
+        <p class="readmore"><a href="https://souths.github.io/post/vue%E5%92%8Ccss3%E5%81%9A%E5%AF%BC%E8%88%AA%E6%A0%8F/">阅读全文</a></p>
     </article>
     
     
@@ -159,89 +159,17 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://souths.github.io/post/%E4%B8%9C%E4%BF%A1%E6%99%BA%E8%83%BD%E8%AF%BB%E5%8D%A1%E5%99%A8promiseWebSocket%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81/" title="东信智能读卡器,promise,WebSocket结合代码">东信智能读卡器,promise,WebSocket结合代码</a>
+                <a href="https://souths.github.io/post/search/" title="搜索">搜索</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
-            2019年12月21日
+            1年1月1日
         </date>
         
         <div class="post-content">
-            ` /** 用法 import dgSocket from &ldquo;@/common/ts/dgSocket&rdquo;; //钩子函数中对dgSocket进行初始化和使用this.$bus.$on('wsMessage',({type,message}:any,data:any)=&gt;{})监听数据的变化 type:&lsquo;error'|'success&rsquo; message:&lsquo;提示的文字&rsquo; data:只有获取数……
+            ……
         </div>
-        <p class="readmore"><a href="https://souths.github.io/post/%E4%B8%9C%E4%BF%A1%E6%99%BA%E8%83%BD%E8%AF%BB%E5%8D%A1%E5%99%A8promiseWebSocket%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://souths.github.io/post/jquery%E5%85%A5%E5%8F%A3%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/" title="Jquery入口简单分析">Jquery入口简单分析</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2019年12月21日
-        </date>
-        
-        <div class="post-content">
-            var aQuery = function (selector, context) { return new aQuery.prototype.init(); } aQuery.prototype = { constructor: aQuery, init: function () { this.v = 'vvv' console.log(this.age,'=&gt;age'); // 20 =&gt;age return this; }, name: function () { console.log(arguments); console.log(this.age); //20 console.log(this.v); // vv return this.age }, age: 20 } aQuery.prototype.init.prototype = aQuery.prototype; console.log(aQuery().name()) //20……
-        </div>
-        <p class="readmore"><a href="https://souths.github.io/post/jquery%E5%85%A5%E5%8F%A3%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://souths.github.io/post/web%E6%96%B0%E7%9F%A5%E8%AF%86%E7%82%B9/" title="Web新知识点">Web新知识点</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2019年12月21日
-        </date>
-        
-        <div class="post-content">
-            WebAssembly，Service worker，webgpu，webgl，Web Workers electron……
-        </div>
-        <p class="readmore"><a href="https://souths.github.io/post/web%E6%96%B0%E7%9F%A5%E8%AF%86%E7%82%B9/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://souths.github.io/post/jquery%E4%B8%AD%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/" title="Jquery中实用技巧">Jquery中实用技巧</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2019年12月21日
-        </date>
-        
-        <div class="post-content">
-            if语句一定要有大括号包裹, for中表达式写法 var array = ['Java', 'Python', 'scala'] for (let index = array.length - 1, element; (element = array[index]) != null; index--) { console.log(element, index) }……
-        </div>
-        <p class="readmore"><a href="https://souths.github.io/post/jquery%E4%B8%AD%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://souths.github.io/post/%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8%E6%88%96%E8%80%85%E8%AE%A9%E9%A1%B5%E9%9D%A2%E6%BB%9A%E5%8A%A8%E5%B9%B3%E6%BB%91/" title="回到顶部或者让页面滚动平滑">回到顶部或者让页面滚动平滑</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2019年12月21日
-        </date>
-        
-        <div class="post-content">
-            &lt;div id=&quot;top31&quot;&gt; 以下是回到顶部代码 document.querySelector(`#top31`).scrollIntoView({ behavior: &quot;smooth&quot; }); CSS scroll-behavior和JS scrollIntoView让页面滚动平滑 https://www.zhangxinxu.com/wordpress/2018/10/scroll-behavior-scrollintoview-%E5%B9%B3%E6%BB%91%E6%BB%9A%E5%8A%A8/#……
-        </div>
-        <p class="readmore"><a href="https://souths.github.io/post/%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8%E6%88%96%E8%80%85%E8%AE%A9%E9%A1%B5%E9%9D%A2%E6%BB%9A%E5%8A%A8%E5%B9%B3%E6%BB%91/">阅读全文</a></p>
+        <p class="readmore"><a href="https://souths.github.io/post/search/">阅读全文</a></p>
     </article>
     
     
@@ -251,9 +179,13 @@
 
 <ol class="page-navigator">
     
+    <li class="prev">
+        <a href="https://souths.github.io/post/page/2/">上一页</a>
+    </li>
+    
 
     
-    <li  class="current">
+    <li >
         <a href="https://souths.github.io/post/">1</a>
     </li>
     
@@ -261,15 +193,11 @@
         <a href="https://souths.github.io/post/page/2/">2</a>
     </li>
     
-    <li >
+    <li  class="current">
         <a href="https://souths.github.io/post/page/3/">3</a>
     </li>
     
 
-    
-    <li class="next">
-        <a href="https://souths.github.io/post/page/2/">下一页</a>
-    </li>
     
 </ol>
 
