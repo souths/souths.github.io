@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vue on souths的博客</title>
+    <link>https://souths.github.io/categories/vue/</link>
+    <description>Recent content in vue on souths的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 20 Jan 2017 16:56:36 +0800</lastBuildDate>
+    
+	<atom:link href="https://souths.github.io/categories/vue/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Element Ui动态设置菜单（el Menu）高亮问题</title>
+      <link>https://souths.github.io/post/element-ui%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E8%8F%9C%E5%8D%95el-menu%E9%AB%98%E4%BA%AE%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 20 Jan 2017 16:56:36 +0800</pubDate>
+      
+      <guid>https://souths.github.io/post/element-ui%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E8%8F%9C%E5%8D%95el-menu%E9%AB%98%E4%BA%AE%E9%97%AE%E9%A2%98/</guid>
+      <description>通过获取到元素，然后设置activeIndex 来进行动态高亮 javascript写法 &amp;lt;el-menu ref=&amp;quot;kzMenu&amp;quot; ... &amp;gt; $route (route) { // hack // 直接改变变量，没想到好的方法 // element-ui el</description>
+    </item>
+    
+    <item>
+      <title>Vuex（modules的store）</title>
+      <link>https://souths.github.io/post/vuexmodules%E7%9A%84store/</link>
+      <pubDate>Fri, 13 Jan 2017 16:46:01 +0800</pubDate>
+      
+      <guid>https://souths.github.io/post/vuexmodules%E7%9A%84store/</guid>
+      <description>modules文件夹下的user.js export default{ namespaced: true, state: { &#39;uu&#39;:&#39;modules+++&#39; }, actions: { userMM({commit},msg){ commit(&#39;userMu&#39;,msg) } }, mutations: { userMu(state,msg){ state.uu = msg } }, getters: { getU(state){ return state.uu } } } actions.js const actions = { mm({commit,rootState},msg){ commit(&#39;mxx&#39;,msg) } } export default actions getters.js const getters = { gettVuex(state){ return state.msg }</description>
+    </item>
+    
+    <item>
+      <title>Vuex（store）</title>
+      <link>https://souths.github.io/post/vuexstore/</link>
+      <pubDate>Fri, 13 Jan 2017 16:39:16 +0800</pubDate>
+      
+      <guid>https://souths.github.io/post/vuexstore/</guid>
+      <description>actions.js /*import * as types from &#39;./types&#39; export default { USER_SIGNIN: ({commit}, form) = &amp;gt; { commit(types.USER_SIGNIN,form) }, USER_SIGNOUT:({commit}) =&amp;gt;{ commit(types.USER_SIGNOUT) } }*/ getters.js /*export default { iuser:(state)=&amp;gt;{ return state.user } }*/ index.js /* import Vue from &#39;vue&#39; import Vuex from &#39;vuex&#39; import mutations from &#39;./mutations&#39; import actions from &#39;./actions&#39; Vue.use(Vuex); export default new Vuex.Store({ modules:{ mutations }, actions }) */ mutations.js /* import {USER_SIGNIN, USER_SIGNOUT,} from &#39;./types&#39; import getters</description>
+    </item>
+    
+    <item>
+      <title>Vue图片路径引用问题</title>
+      <link>https://souths.github.io/post/vue%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 13 Jan 2017 16:33:16 +0800</pubDate>
+      
+      <guid>https://souths.github.io/post/vue%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/</guid>
+      <description>在vue项目中正确引用图片的示例(打包也可以正常显示): &amp;lt;img :src=&amp;quot;searchMap&amp;quot; alt=&amp;quot;地图icon&amp;quot; class=&amp;quot;searchMap&amp;quot;&amp;gt; data() { return { msg: &amp;quot;我是shop</description>
+    </item>
+    
+    <item>
+      <title>Vue和css3做导航栏</title>
+      <link>https://souths.github.io/post/vue%E5%92%8Ccss3%E5%81%9A%E5%AF%BC%E8%88%AA%E6%A0%8F/</link>
+      <pubDate>Fri, 13 Jan 2017 16:29:06 +0800</pubDate>
+      
+      <guid>https://souths.github.io/post/vue%E5%92%8Ccss3%E5%81%9A%E5%AF%BC%E8%88%AA%E6%A0%8F/</guid>
+      <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;!--也许 Vue+CSS3 做交互特效更简单https://juejin.im/post/5a121e4b6fb9a045076f41a3--&amp;</description>
+    </item>
+    
+  </channel>
+</rss>

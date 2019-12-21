@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Storage on souths的博客</title>
+    <link>https://souths.github.io/categories/Storage/</link>
+    <description>Recent content in Storage on souths的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 21 Dec 2019 16:37:26 +0800</lastBuildDate>
+    
+	<atom:link href="https://souths.github.io/categories/Storage/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>LocalStorage SessionStorage</title>
+      <link>https://souths.github.io/post/localStorage-sessionStorage/</link>
+      <pubDate>Sat, 21 Dec 2019 16:37:26 +0800</pubDate>
+      
+      <guid>https://souths.github.io/post/localStorage-sessionStorage/</guid>
+      <description>/*localStorage的API 获取键值对数量 localStorage.length 读取 localStorage.getItem(&#39;name&#39;), localStorage.key(i) 添加/修改 localStorage.setItem(&#39;name&#39;,&#39;xuanyuan&#39;) 删除对应键值 localStorage.removeItem(&#39;name&#39;) 删除所有数据 localStorage.clear() 存储：localStorage.setI</description>
+    </item>
+    
+  </channel>
+</rss>

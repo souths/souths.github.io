@@ -26,7 +26,7 @@
       <pubDate>Sat, 21 Dec 2019 17:13:54 +0800</pubDate>
       
       <guid>https://souths.github.io/post/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8Compontns%E6%9E%84%E9%80%A0%E9%A1%B5%E9%9D%A2/</guid>
-      <description>js文件 const app = getApp(); //自定义组件 https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/ //使用 Component 构造器构造页面 https://developers.weixin.qq.com/miniprogram/dev/reference/api/Component.html Component({ behaviors: [],//类似于mixins和traits的组件间代码复用机制 properties: { //组件的对外属性，是属性名到属性设置的映射表 }, data:{ family_list:[] }, lifetimes: { // 生命周期函数，可以为函数，或一个在methods段中定义的方法名 attached: function () { }, moved: function () { }, detached: function () {</description>
+      <description>js文件 const app = getApp(); //自定义组件 https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/ //使用 Component 构造器构造页面 https://developers.weixin.qq.com/miniprogram/dev/reference/api/Component.html Component({ behaviors: [],//类似于mixins和traits的组件间代码复用机制 properties: { //组件的对</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Sat, 21 Dec 2019 17:12:57 +0800</pubDate>
       
       <guid>https://souths.github.io/post/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E7%BD%AEbackgroundColor%E6%97%A0%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98%E4%BB%A5%E5%8F%8A%E8%AE%BE%E7%BD%AE%E9%A1%B5%E9%9D%A2%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2/</guid>
-      <description>当我们在微信小程序 json 中设置 backgroundColor 时，实际在电脑的模拟器中根本看不到效果。 这是因为 backgroundColor 指的窗体背景颜色，而不是页面的背景颜色，即窗体下拉刷新或上拉加载时露出的背景。在电脑的模拟器中是看不到这个动作的，所以会让人误以为这个配置是无效的。 如果要设置页面背景颜色，得在 wxss 中自定义样式，如下： page {</description>
+      <description>当我们在微信小程序 json 中设置 backgroundColor 时，实际在电脑的模拟器中根本看不到效果。 这是因为 backgroundColor 指的窗体背景颜色，而不是页面的背景颜色，即窗体下拉刷新或上拉加</description>
     </item>
     
     <item>
@@ -44,52 +44,7 @@
       <pubDate>Sat, 21 Dec 2019 17:07:48 +0800</pubDate>
       
       <guid>https://souths.github.io/post/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%96%B0%E5%9D%91flex%E5%B8%83%E5%B1%80%E5%90%8Eimg%E5%AE%BD%E4%B8%8D%E6%98%BE%E7%A4%BA/</guid>
-      <description>异常分析 由于flex默认为所有子元素横向布局，所以其他元素会对img元素造成挤压，从而呈现img的宽度为0的假象 解决方法 flex布局时设置flex-wrap: wrap;使元素自动换行，不挤压现有元素</description>
-    </item>
-    
-    <item>
-      <title>Flex布局实现元素浮动效果</title>
-      <link>https://souths.github.io/post/flex%E5%B8%83%E5%B1%80%E5%AE%9E%E7%8E%B0%E5%85%83%E7%B4%A0%E6%B5%AE%E5%8A%A8%E6%95%88%E6%9E%9C/</link>
-      <pubDate>Sat, 21 Dec 2019 17:07:00 +0800</pubDate>
-      
-      <guid>https://souths.github.io/post/flex%E5%B8%83%E5%B1%80%E5%AE%9E%E7%8E%B0%E5%85%83%E7%B4%A0%E6%B5%AE%E5%8A%A8%E6%95%88%E6%9E%9C/</guid>
-      <description>容器元素css设置:display:flex; flex-wrap: wrap; 子元素css固定宽度高度</description>
-    </item>
-    
-    <item>
-      <title>东信智能读卡器,promise,WebSocket结合代码</title>
-      <link>https://souths.github.io/post/%E4%B8%9C%E4%BF%A1%E6%99%BA%E8%83%BD%E8%AF%BB%E5%8D%A1%E5%99%A8promiseWebSocket%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81/</link>
-      <pubDate>Sat, 21 Dec 2019 17:05:35 +0800</pubDate>
-      
-      <guid>https://souths.github.io/post/%E4%B8%9C%E4%BF%A1%E6%99%BA%E8%83%BD%E8%AF%BB%E5%8D%A1%E5%99%A8promiseWebSocket%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81/</guid>
-      <description>` /** 用法 import dgSocket from &amp;ldquo;@/common/ts/dgSocket&amp;rdquo;; //钩子函数中对dgSocket进行初始化和使用this.$bus.$on(&#39;wsMessage&#39;,({type,message}:any,data:any)=&amp;gt;{})监听数据的变化 type:&amp;lsquo;error&#39;|&#39;success&amp;rsquo; message:&amp;lsquo;提示的文字&amp;rsquo; data:只有获取数</description>
-    </item>
-    
-    <item>
-      <title>Jquery入口简单分析</title>
-      <link>https://souths.github.io/post/jquery%E5%85%A5%E5%8F%A3%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/</link>
-      <pubDate>Sat, 21 Dec 2019 17:04:46 +0800</pubDate>
-      
-      <guid>https://souths.github.io/post/jquery%E5%85%A5%E5%8F%A3%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/</guid>
-      <description>var aQuery = function (selector, context) { return new aQuery.prototype.init(); } aQuery.prototype = { constructor: aQuery, init: function () { this.v = &#39;vvv&#39; console.log(this.age,&#39;=&amp;gt;age&#39;); // 20 =&amp;gt;age return this; }, name: function () { console.log(arguments); console.log(this.age); //20 console.log(this.v); // vv return this.age }, age: 20 } aQuery.prototype.init.prototype = aQuery.prototype; console.log(aQuery().name()) //20</description>
-    </item>
-    
-    <item>
-      <title>Web新知识点</title>
-      <link>https://souths.github.io/post/web%E6%96%B0%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
-      <pubDate>Sat, 21 Dec 2019 17:03:41 +0800</pubDate>
-      
-      <guid>https://souths.github.io/post/web%E6%96%B0%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
-      <description>WebAssembly，Service worker，webgpu，webgl，Web Workers electron</description>
-    </item>
-    
-    <item>
-      <title>Jquery中实用技巧</title>
-      <link>https://souths.github.io/post/jquery%E4%B8%AD%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/</link>
-      <pubDate>Sat, 21 Dec 2019 17:03:00 +0800</pubDate>
-      
-      <guid>https://souths.github.io/post/jquery%E4%B8%AD%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/</guid>
-      <description>if语句一定要有大括号包裹, for中表达式写法 var array = [&#39;Java&#39;, &#39;Python&#39;, &#39;scala&#39;] for (let index = array.length - 1, element; (element = array[index]) != null; index--) { console.log(element, index) }</description>
+      <description>异常分析 由于flex默认为所有子元素横向布局，所以其他元素会对img元素造成挤压，从而呈现img的宽度为0的假象 解决方法 flex布局时设置f</description>
     </item>
     
     <item>
@@ -102,111 +57,12 @@
     </item>
     
     <item>
-      <title>Input表单中限制只能输入纯数字</title>
-      <link>https://souths.github.io/post/input%E8%A1%A8%E5%8D%95%E4%B8%AD%E9%99%90%E5%88%B6%E5%8F%AA%E8%83%BD%E8%BE%93%E5%85%A5%E7%BA%AF%E6%95%B0%E5%AD%97/</link>
-      <pubDate>Sat, 21 Dec 2019 17:00:21 +0800</pubDate>
-      
-      <guid>https://souths.github.io/post/input%E8%A1%A8%E5%8D%95%E4%B8%AD%E9%99%90%E5%88%B6%E5%8F%AA%E8%83%BD%E8%BE%93%E5%85%A5%E7%BA%AF%E6%95%B0%E5%AD%97/</guid>
-      <description>&amp;lt;input class=&amp;quot;el-input__inner&amp;quot; v-model=&amp;quot;scope.row.total_num&amp;quot; @input=&amp;quot;pureNumber(scope.row)&amp;quot; placeholder=&amp;quot;请输入评分,纯数字&amp;quot;&amp;gt; pureNumber (row:any) { // 实时把非数字的输入过滤掉 row.total_num = row.total_num.match(/\d/ig) ? row.total_num.match(/\d/ig).join(&#39;&#39;) : &#39;&#39; }</description>
-    </item>
-    
-    <item>
-      <title>Js验证手机或者固定电话</title>
-      <link>https://souths.github.io/post/js%E9%AA%8C%E8%AF%81%E6%89%8B%E6%9C%BA%E6%88%96%E8%80%85%E5%9B%BA%E5%AE%9A%E7%94%B5%E8%AF%9D/</link>
-      <pubDate>Sat, 21 Dec 2019 16:59:09 +0800</pubDate>
-      
-      <guid>https://souths.github.io/post/js%E9%AA%8C%E8%AF%81%E6%89%8B%E6%9C%BA%E6%88%96%E8%80%85%E5%9B%BA%E5%AE%9A%E7%94%B5%E8%AF%9D/</guid>
-      <description>/^1\d{10}$|^(0\d{2,3}-?|\(0\d{2,3}\))?[1-9]\d{4,7}(-\d{1,8})?$/.test(value) 规则说明： 1、可以是1开头的11位数字（手机号） 2、可以是“区号-电话号-分机号”或者是“(区号)电话号-分机号”格式 3、区号是0开头的3～4位数字，可以没有区号 4、电话号是5～8位数字，不能以0开头 5、分机号是1～8位数字，可以没有分机号</description>
-    </item>
-    
-    <item>
-      <title>JS的splice方法在for循环中使用可能会遇到的问题</title>
-      <link>https://souths.github.io/post/JS%E7%9A%84splice%E6%96%B9%E6%B3%95%E5%9C%A8for%E5%BE%AA%E7%8E%AF%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%8F%AF%E8%83%BD%E4%BC%9A%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Sat, 21 Dec 2019 16:57:50 +0800</pubDate>
-      
-      <guid>https://souths.github.io/post/JS%E7%9A%84splice%E6%96%B9%E6%B3%95%E5%9C%A8for%E5%BE%AA%E7%8E%AF%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%8F%AF%E8%83%BD%E4%BC%9A%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-      <description>在写JS代码时，我们常常使用 splice 函数来删除数组中的元素，因为 splice 函数会直接对数组进行修改，从而不需再自己写一个算法来移动数组中的其他元素填补到被删除的位置。splice 功能十分强大，除了可以删除数组的元素之外，还可以删除的同时添加新的元素到删除的位置等等用法。介绍 splice 的删除数组元素的用</description>
-    </item>
-    
-    <item>
-      <title>Element Ui动态设置菜单（el Menu）高亮问题</title>
-      <link>https://souths.github.io/post/element-ui%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E8%8F%9C%E5%8D%95el-menu%E9%AB%98%E4%BA%AE%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Sat, 21 Dec 2019 16:56:36 +0800</pubDate>
-      
-      <guid>https://souths.github.io/post/element-ui%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E8%8F%9C%E5%8D%95el-menu%E9%AB%98%E4%BA%AE%E9%97%AE%E9%A2%98/</guid>
-      <description>通过获取到元素，然后设置activeIndex 来进行动态高亮 javascript写法 &amp;lt;el-menu ref=&amp;quot;kzMenu&amp;quot; ... &amp;gt; $route (route) { // hack // 直接改变变量，没想到好的方法 // element-ui elMenu的items是缓存起来的 // list的改变不能改改items里面的key值 this.$refs.myMenu.activedIndex = route.path } typescript写法： &amp;lt;el-menu ref=&amp;quot;kzMenu&amp;quot; ... &amp;gt; // 监听路由 @Watch(&amp;quot;$route&amp;quot;) onRouteChanged(to: any, from:</description>
-    </item>
-    
-    <item>
-      <title>For循环中拷贝对象给另外一个对象并添加到数组中</title>
-      <link>https://souths.github.io/post/for%E5%BE%AA%E7%8E%AF%E4%B8%AD%E6%8B%B7%E8%B4%9D%E5%AF%B9%E8%B1%A1%E7%BB%99%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%88%B0%E6%95%B0%E7%BB%84%E4%B8%AD/</link>
-      <pubDate>Sat, 21 Dec 2019 16:55:50 +0800</pubDate>
-      
-      <guid>https://souths.github.io/post/for%E5%BE%AA%E7%8E%AF%E4%B8%AD%E6%8B%B7%E8%B4%9D%E5%AF%B9%E8%B1%A1%E7%BB%99%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%88%B0%E6%95%B0%E7%BB%84%E4%B8%AD/</guid>
-      <description>var i,item,li,list=[]; for(i=0;i&amp;lt;imgList.length;i++){ item=imgList[i]; li={ compressImageName:item.smallImagePath, compressImagePath :item.smallImageUrl, originImageName : item.imagePath, originImagePath : item.imageUrl, seq :i, $$hashKey:item.$$hashKey, uuid:item.uuid }; list.push(li); } /*imgList是一个数组,数组里面是多个对象,把这多个对象拷贝到li对象中,li对象中是每个键值对都跟imgList中的对象一样,并且得到imgList中的每个对象,而不是只得到最后一个,类似于实现深拷贝*/</description>
-    </item>
-    
-    <item>
-      <title>JS获取上一访问页面URL地址document</title>
-      <link>https://souths.github.io/post/JS%E8%8E%B7%E5%8F%96%E4%B8%8A%E4%B8%80%E8%AE%BF%E9%97%AE%E9%A1%B5%E9%9D%A2URL%E5%9C%B0%E5%9D%80document.referrer%E5%AE%9E%E8%B7%B5/</link>
-      <pubDate>Sat, 21 Dec 2019 16:54:29 +0800</pubDate>
-      
-      <guid>https://souths.github.io/post/JS%E8%8E%B7%E5%8F%96%E4%B8%8A%E4%B8%80%E8%AE%BF%E9%97%AE%E9%A1%B5%E9%9D%A2URL%E5%9C%B0%E5%9D%80document.referrer%E5%AE%9E%E8%B7%B5/</guid>
-      <description>http://www.zhangxinxu.com/wordpress/2017/02/js-page-url-document-referrer/(jS获取上一访问页面URL地址document.referrer实践) 这篇文章发布于 2017年02月13日，星期一，22:55，归</description>
-    </item>
-    
-    <item>
-      <title>FileReader与URL.createObjectURL实现图片、视频上传预览</title>
-      <link>https://souths.github.io/post/FileReader%E4%B8%8EURL.createObjectURL%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E8%A7%86%E9%A2%91%E4%B8%8A%E4%BC%A0%E9%A2%84%E8%A7%88/</link>
-      <pubDate>Sat, 21 Dec 2019 16:51:08 +0800</pubDate>
-      
-      <guid>https://souths.github.io/post/FileReader%E4%B8%8EURL.createObjectURL%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E8%A7%86%E9%A2%91%E4%B8%8A%E4%BC%A0%E9%A2%84%E8%A7%88/</guid>
-      <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;FileReader与URL.createObjectURL实现图片、视频上传预览&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt; * { box-sizing: border-box; } .section { margin: 20px auto; width: 500px; border: 1px solid #666; text-align: center; } .preview { width: 100%; margin-top: 10px; padding: 10px; min-height: 100px; background-color: #999; } .preview img, .preview video { width: 100%; } &amp;lt;/style&amp;gt; &amp;lt;script src=&amp;quot;https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js&amp;quot; type=&amp;quot;text/javascript&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;!--文章https://ju</description>
-    </item>
-    
-    <item>
-      <title>正则收集</title>
-      <link>https://souths.github.io/post/%E6%AD%A3%E5%88%99%E6%94%B6%E9%9B%86/</link>
-      <pubDate>Sat, 21 Dec 2019 16:49:30 +0800</pubDate>
-      
-      <guid>https://souths.github.io/post/%E6%AD%A3%E5%88%99%E6%94%B6%E9%9B%86/</guid>
-      <description>var validatePatterns = { // &amp;quot;required&amp;quot;: [/^[\S+\s*\S+]+$/ig, &amp;quot;不能为空！&amp;quot;], &amp;quot;required&amp;quot;: [/^\s*$/g, &amp;quot;不能为空！&amp;quot;], &amp;quot;integer&amp;quot;: [/^(0|[1-9][0-9]*)$/, &amp;quot;必须为整数！&amp;quot;], &amp;quot;numeric&amp;quot;: [/^\d+(\.\d+)?$/, &amp;quot;不是合法的数字！&amp;quot;], &amp;quot;currency&amp;quot;: [/^\d+\.\d{1,2}$/, &amp;quot;不是合法的货币数字！&amp;quot;], &amp;quot;email&amp;quot;: [/^\w+@\w+(\.\w+)*$/, &amp;quot;不合法的email输入！&amp;</description>
-    </item>
-    
-    <item>
       <title>文章分享</title>
       <link>https://souths.github.io/post/%E6%96%87%E7%AB%A0%E5%88%86%E4%BA%AB/</link>
       <pubDate>Sat, 21 Dec 2019 16:48:20 +0800</pubDate>
       
       <guid>https://souths.github.io/post/%E6%96%87%E7%AB%A0%E5%88%86%E4%BA%AB/</guid>
-      <description>http://hao.jser.com/archive/19370/(*********************************个人分享–WEB前端学习资源分享*************************) https://juejin.im/entry/5a1d31</description>
-    </item>
-    
-    <item>
-      <title>SetTou一次定时器做循环使用</title>
-      <link>https://souths.github.io/post/setTou%E4%B8%80%E6%AC%A1%E5%AE%9A%E6%97%B6%E5%99%A8%E5%81%9A%E5%BE%AA%E7%8E%AF%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Sat, 21 Dec 2019 16:47:35 +0800</pubDate>
-      
-      <guid>https://souths.github.io/post/setTou%E4%B8%80%E6%AC%A1%E5%AE%9A%E6%97%B6%E5%99%A8%E5%81%9A%E5%BE%AA%E7%8E%AF%E4%BD%BF%E7%94%A8/</guid>
-      <description>var num = 5 var timer = &#39;&#39; fn() function fn() { timer = setTimeout(function () { num--; se.innerHTML = &amp;quot;&amp;quot;+num+&amp;quot;S 后返回&amp;quot; if(num==0){ clearTimeout(timer) return; } fn() },1000) }</description>
-    </item>
-    
-    <item>
-      <title>Vuex（modules的store）</title>
-      <link>https://souths.github.io/post/vuexmodules%E7%9A%84store/</link>
-      <pubDate>Sat, 21 Dec 2019 16:46:01 +0800</pubDate>
-      
-      <guid>https://souths.github.io/post/vuexmodules%E7%9A%84store/</guid>
-      <description>modules文件夹下的user.js export default{ namespaced: true, state: { &#39;uu&#39;:&#39;modules+++&#39; }, actions: { userMM({commit},msg){ commit(&#39;userMu&#39;,msg) } }, mutations: { userMu(state,msg){ state.uu = msg } }, getters: { getU(state){ return state.uu } } } actions.js const actions = { mm({commit,rootState},msg){ commit(&#39;mxx&#39;,msg) } } export default actions getters.js const getters = { gettVuex(state){ return state.msg } } export default getters index.js import Vue from &#39;vue&#39; import Vuex from &#39;vuex&#39; import mutations from &#39;./mutations&#39; import actions from &#39;./actions&#39; import state from &#39;./state&#39; import getters from &#39;./getters&#39; import user from &#39;./modules/user&#39; Vue.use(Vuex) export default new Vuex.Store({ strict: true, modules:{ user }, mutations, actions, state, getters }) index.vue &amp;lt;template&amp;gt; &amp;lt;div&amp;gt; 首页 &amp;lt;button @click=&amp;quot;btn&amp;quot;&amp;gt;btn&amp;lt;/button&amp;gt; &amp;lt;div&amp;gt;{{&#39;xx&#39;|time}}&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;{{gettVuex}}&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;{{getU}}&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; import transitionName from &#39;@/mixin/transitionName&#39; import {mapGetters} from &#39;vuex&#39; export</description>
-    </item>
-    
-    <item>
-      <title>Vuex（store）</title>
-      <link>https://souths.github.io/post/vuexstore/</link>
-      <pubDate>Sat, 21 Dec 2019 16:39:16 +0800</pubDate>
-      
-      <guid>https://souths.github.io/post/vuexstore/</guid>
-      <description>actions.js /*import * as types from &#39;./types&#39; export default { USER_SIGNIN: ({commit}, form) = &amp;gt; { commit(types.USER_SIGNIN,form) }, USER_SIGNOUT:({commit}) =&amp;gt;{ commit(types.USER_SIGNOUT) } }*/ getters.js /*export default { iuser:(state)=&amp;gt;{ return state.user } }*/ index.js /* import Vue from &#39;vue&#39; import Vuex from &#39;vuex&#39; import mutations from &#39;./mutations&#39; import actions from &#39;./actions&#39; Vue.use(Vuex); export default new Vuex.Store({ modules:{ mutations }, actions }) */ mutations.js /* import {USER_SIGNIN, USER_SIGNOUT,} from &#39;./types&#39; import getters from &#39;./getters&#39; import Vue from &#39;vue&#39; const state = { user:JSON.parse(localStorage.getItem(&#39;user&#39;)) || {}, //user:JSON.parse(sessionStorage.getItem(&#39;user&#39;)) || {}, } const mutations = { [USER_SIGNIN](state,from){ if(state.user==undefined){ state.user={} } localStorage.setItem(&#39;user&#39;, JSON.stringify(from)) //sessionStorage.setItem(&#39;user&#39;, JSON.stringify(from)) Object.assign(state.user, from) }, [USER_SIGNOUT](state){ localStorage.removeItem(&#39;user&#39;) //sessionStorage.removeItem(&#39;user&#39;) Object.keys(state).forEach(k =&amp;gt; Vue.delete(state, k)) } } export default { state, mutations, getters } */ types.js /* export const USER_SIGNIN = &#39;USER_SIGNIN&#39; //登录成功 export const USER_SIGNOUT = &#39;USER_SIGNOUT&#39; //退</description>
+      <description>http://hao.jser.com/archive/19370/(*********************************个人</description>
     </item>
     
     <item>
@@ -215,25 +71,169 @@
       <pubDate>Sat, 21 Dec 2019 16:37:26 +0800</pubDate>
       
       <guid>https://souths.github.io/post/localStorage-sessionStorage/</guid>
-      <description>/*localStorage的API 获取键值对数量 localStorage.length 读取 localStorage.getItem(&#39;name&#39;), localStorage.key(i) 添加/修改 localStorage.setItem(&#39;name&#39;,&#39;xuanyuan&#39;) 删除对应键值 localStorage.removeItem(&#39;name&#39;) 删除所有数据 localStorage.clear() 存储：localStorage.setItem(&#39;data&#39;,JSON.stringify(data.body.data)); 获取：JSON.parse(localStorage.</description>
+      <description>/*localStorage的API 获取键值对数量 localStorage.length 读取 localStorage.getItem(&#39;name&#39;), localStorage.key(i) 添加/修改 localStorage.setItem(&#39;name&#39;,&#39;xuanyuan&#39;) 删除对应键值 localStorage.removeItem(&#39;name&#39;) 删除所有数据 localStorage.clear() 存储：localStorage.setI</description>
+    </item>
+    
+    <item>
+      <title>东信智能读卡器,promise,WebSocket结合代码</title>
+      <link>https://souths.github.io/post/%E4%B8%9C%E4%BF%A1%E6%99%BA%E8%83%BD%E8%AF%BB%E5%8D%A1%E5%99%A8promiseWebSocket%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Sun, 08 Sep 2019 17:05:35 +0800</pubDate>
+      
+      <guid>https://souths.github.io/post/%E4%B8%9C%E4%BF%A1%E6%99%BA%E8%83%BD%E8%AF%BB%E5%8D%A1%E5%99%A8promiseWebSocket%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81/</guid>
+      <description>` /** 用法 import dgSocket from &amp;ldquo;@/common/ts/dgSocket&amp;rdquo;; //钩子函数中对dgSocket进行初始化和使用this.$bus.$on(&#39;wsMessage&#39;,({type,messa</description>
+    </item>
+    
+    <item>
+      <title>Web新知识点</title>
+      <link>https://souths.github.io/post/web%E6%96%B0%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
+      <pubDate>Sun, 05 May 2019 17:03:41 +0800</pubDate>
+      
+      <guid>https://souths.github.io/post/web%E6%96%B0%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
+      <description>WebAssembly，Service worker，webgpu，webgl，Web Workers electron</description>
+    </item>
+    
+    <item>
+      <title>For循环中拷贝对象给另外一个对象并添加到数组中</title>
+      <link>https://souths.github.io/post/for%E5%BE%AA%E7%8E%AF%E4%B8%AD%E6%8B%B7%E8%B4%9D%E5%AF%B9%E8%B1%A1%E7%BB%99%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%88%B0%E6%95%B0%E7%BB%84%E4%B8%AD/</link>
+      <pubDate>Sat, 01 Sep 2018 16:55:50 +0800</pubDate>
+      
+      <guid>https://souths.github.io/post/for%E5%BE%AA%E7%8E%AF%E4%B8%AD%E6%8B%B7%E8%B4%9D%E5%AF%B9%E8%B1%A1%E7%BB%99%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%88%B0%E6%95%B0%E7%BB%84%E4%B8%AD/</guid>
+      <description>var i,item,li,list=[]; for(i=0;i&amp;lt;imgList.length;i++){ item=imgList[i]; li={ compressImageName:item.smallImagePath, compressImagePath :item.smallImageUrl, originImageName : item.imagePath, originImagePath : item.imageUrl, seq :i, $$hashKey:item.$$hashKey, uuid:item.uuid }; list.push(li); } /*imgList是一个数组,数组里面是多个对象,把这多个对象拷贝到li对象中,li对象中是每个键</description>
+    </item>
+    
+    <item>
+      <title>Input表单中限制只能输入纯数字</title>
+      <link>https://souths.github.io/post/input%E8%A1%A8%E5%8D%95%E4%B8%AD%E9%99%90%E5%88%B6%E5%8F%AA%E8%83%BD%E8%BE%93%E5%85%A5%E7%BA%AF%E6%95%B0%E5%AD%97/</link>
+      <pubDate>Wed, 11 Jul 2018 17:00:21 +0800</pubDate>
+      
+      <guid>https://souths.github.io/post/input%E8%A1%A8%E5%8D%95%E4%B8%AD%E9%99%90%E5%88%B6%E5%8F%AA%E8%83%BD%E8%BE%93%E5%85%A5%E7%BA%AF%E6%95%B0%E5%AD%97/</guid>
+      <description>&amp;lt;input class=&amp;quot;el-input__inner&amp;quot; v-model=&amp;quot;scope.row.total_num&amp;quot; @input=&amp;quot;pureNumber(scope.row)&amp;quot; placeholder=&amp;quot;请输入评分,纯数字&amp;quot;&amp;gt; pureNumber (row:any) { // 实时把非数字的输入过滤掉 row.total_num = row.total_num.match(/\d/ig) ? row.total_num.match(/\d/ig).join(&#39;&#39;) : &#39;&#39; }</description>
+    </item>
+    
+    <item>
+      <title>JS获取上一访问页面URL地址document</title>
+      <link>https://souths.github.io/post/JS%E8%8E%B7%E5%8F%96%E4%B8%8A%E4%B8%80%E8%AE%BF%E9%97%AE%E9%A1%B5%E9%9D%A2URL%E5%9C%B0%E5%9D%80document.referrer%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Sat, 05 May 2018 16:54:29 +0800</pubDate>
+      
+      <guid>https://souths.github.io/post/JS%E8%8E%B7%E5%8F%96%E4%B8%8A%E4%B8%80%E8%AE%BF%E9%97%AE%E9%A1%B5%E9%9D%A2URL%E5%9C%B0%E5%9D%80document.referrer%E5%AE%9E%E8%B7%B5/</guid>
+      <description>http://www.zhangxinxu.com/wordpress/2017/02/js-page-url-document-refer</description>
+    </item>
+    
+    <item>
+      <title>FileReader与URL.createObjectURL实现图片、视频上传预览</title>
+      <link>https://souths.github.io/post/FileReader%E4%B8%8EURL.createObjectURL%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E8%A7%86%E9%A2%91%E4%B8%8A%E4%BC%A0%E9%A2%84%E8%A7%88/</link>
+      <pubDate>Tue, 10 Apr 2018 16:51:08 +0800</pubDate>
+      
+      <guid>https://souths.github.io/post/FileReader%E4%B8%8EURL.createObjectURL%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E8%A7%86%E9%A2%91%E4%B8%8A%E4%BC%A0%E9%A2%84%E8%A7%88/</guid>
+      <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;FileReader与URL.createObjectURL实现图片、视频上传预览&amp;lt;/titl</description>
+    </item>
+    
+    <item>
+      <title>Flex布局实现元素浮动效果</title>
+      <link>https://souths.github.io/post/flex%E5%B8%83%E5%B1%80%E5%AE%9E%E7%8E%B0%E5%85%83%E7%B4%A0%E6%B5%AE%E5%8A%A8%E6%95%88%E6%9E%9C/</link>
+      <pubDate>Thu, 02 Feb 2017 17:07:00 +0800</pubDate>
+      
+      <guid>https://souths.github.io/post/flex%E5%B8%83%E5%B1%80%E5%AE%9E%E7%8E%B0%E5%85%83%E7%B4%A0%E6%B5%AE%E5%8A%A8%E6%95%88%E6%9E%9C/</guid>
+      <description>容器元素css设置:display:flex; flex-wrap: wrap; 子元素css固定宽度高度</description>
+    </item>
+    
+    <item>
+      <title>Element Ui动态设置菜单（el Menu）高亮问题</title>
+      <link>https://souths.github.io/post/element-ui%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E8%8F%9C%E5%8D%95el-menu%E9%AB%98%E4%BA%AE%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 20 Jan 2017 16:56:36 +0800</pubDate>
+      
+      <guid>https://souths.github.io/post/element-ui%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E8%8F%9C%E5%8D%95el-menu%E9%AB%98%E4%BA%AE%E9%97%AE%E9%A2%98/</guid>
+      <description>通过获取到元素，然后设置activeIndex 来进行动态高亮 javascript写法 &amp;lt;el-menu ref=&amp;quot;kzMenu&amp;quot; ... &amp;gt; $route (route) { // hack // 直接改变变量，没想到好的方法 // element-ui el</description>
+    </item>
+    
+    <item>
+      <title>Vuex（modules的store）</title>
+      <link>https://souths.github.io/post/vuexmodules%E7%9A%84store/</link>
+      <pubDate>Fri, 13 Jan 2017 16:46:01 +0800</pubDate>
+      
+      <guid>https://souths.github.io/post/vuexmodules%E7%9A%84store/</guid>
+      <description>modules文件夹下的user.js export default{ namespaced: true, state: { &#39;uu&#39;:&#39;modules+++&#39; }, actions: { userMM({commit},msg){ commit(&#39;userMu&#39;,msg) } }, mutations: { userMu(state,msg){ state.uu = msg } }, getters: { getU(state){ return state.uu } } } actions.js const actions = { mm({commit,rootState},msg){ commit(&#39;mxx&#39;,msg) } } export default actions getters.js const getters = { gettVuex(state){ return state.msg }</description>
+    </item>
+    
+    <item>
+      <title>Vuex（store）</title>
+      <link>https://souths.github.io/post/vuexstore/</link>
+      <pubDate>Fri, 13 Jan 2017 16:39:16 +0800</pubDate>
+      
+      <guid>https://souths.github.io/post/vuexstore/</guid>
+      <description>actions.js /*import * as types from &#39;./types&#39; export default { USER_SIGNIN: ({commit}, form) = &amp;gt; { commit(types.USER_SIGNIN,form) }, USER_SIGNOUT:({commit}) =&amp;gt;{ commit(types.USER_SIGNOUT) } }*/ getters.js /*export default { iuser:(state)=&amp;gt;{ return state.user } }*/ index.js /* import Vue from &#39;vue&#39; import Vuex from &#39;vuex&#39; import mutations from &#39;./mutations&#39; import actions from &#39;./actions&#39; Vue.use(Vuex); export default new Vuex.Store({ modules:{ mutations }, actions }) */ mutations.js /* import {USER_SIGNIN, USER_SIGNOUT,} from &#39;./types&#39; import getters</description>
     </item>
     
     <item>
       <title>Vue图片路径引用问题</title>
       <link>https://souths.github.io/post/vue%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Sat, 21 Dec 2019 16:33:16 +0800</pubDate>
+      <pubDate>Fri, 13 Jan 2017 16:33:16 +0800</pubDate>
       
       <guid>https://souths.github.io/post/vue%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/</guid>
-      <description>在vue项目中正确引用图片的示例(打包也可以正常显示): &amp;lt;img :src=&amp;quot;searchMap&amp;quot; alt=&amp;quot;地图icon&amp;quot; class=&amp;quot;searchMap&amp;quot;&amp;gt; data() { return { msg: &amp;quot;我是shopmailvue&amp;quot;, searchMap: require(&amp;quot;../../assets/images//searchMap.png&amp;quot;) }; }, 谨防图片路径被当做字符串处理,而不能显示图片 http://blog.csdn.net/letasian/article/details/76219889 当我们在Vue.js项目中引用图片时，关于图片路径有以下几</description>
+      <description>在vue项目中正确引用图片的示例(打包也可以正常显示): &amp;lt;img :src=&amp;quot;searchMap&amp;quot; alt=&amp;quot;地图icon&amp;quot; class=&amp;quot;searchMap&amp;quot;&amp;gt; data() { return { msg: &amp;quot;我是shop</description>
     </item>
     
     <item>
       <title>Vue和css3做导航栏</title>
       <link>https://souths.github.io/post/vue%E5%92%8Ccss3%E5%81%9A%E5%AF%BC%E8%88%AA%E6%A0%8F/</link>
-      <pubDate>Sat, 21 Dec 2019 16:29:06 +0800</pubDate>
+      <pubDate>Fri, 13 Jan 2017 16:29:06 +0800</pubDate>
       
       <guid>https://souths.github.io/post/vue%E5%92%8Ccss3%E5%81%9A%E5%AF%BC%E8%88%AA%E6%A0%8F/</guid>
-      <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;!--也许 Vue+CSS3 做交互特效更简单https://juejin.im/post/5a121e4b6fb9a045076f41a3--&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;Title&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;style&amp;gt; body{ margin: 0px; padding: 0px; } .nav{ margin: 40px; position: relative; } .nav li{ float: left; width: 100px; height: 40px; line-height: 40px; color: #fff; text-align: center; background: #09f; cursor: pointer; list-style: none; } .nav span{ position: relative; z-index: 2; } .nav .slider{ position: absolute; transition: all .5s cubic-bezier(0.4, -0.3, 0.57, 1.38); width: 100px; height: 40px; background: #f90; top: 0;</description>
+      <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;!--也许 Vue+CSS3 做交互特效更简单https://juejin.im/post/5a121e4b6fb9a045076f41a3--&amp;</description>
+    </item>
+    
+    <item>
+      <title>正则收集</title>
+      <link>https://souths.github.io/post/%E6%AD%A3%E5%88%99%E6%94%B6%E9%9B%86/</link>
+      <pubDate>Mon, 01 Aug 2016 16:49:30 +0800</pubDate>
+      
+      <guid>https://souths.github.io/post/%E6%AD%A3%E5%88%99%E6%94%B6%E9%9B%86/</guid>
+      <description>var validatePatterns = { // &amp;quot;required&amp;quot;: [/^[\S+\s*\S+]+$/ig, &amp;quot;不能为空！&amp;quot;], &amp;quot;required&amp;quot;: [/^\s*$/g, &amp;quot;不能为空！&amp;quot;], &amp;quot;integer&amp;quot;: [/^(0|[1-9][0-9]*)$/, &amp;quot;必须为整数！&amp;quot;], &amp;quot;numeric&amp;quot;:</description>
+    </item>
+    
+    <item>
+      <title>JS的splice方法在for循环中使用可能会遇到的问题</title>
+      <link>https://souths.github.io/post/JS%E7%9A%84splice%E6%96%B9%E6%B3%95%E5%9C%A8for%E5%BE%AA%E7%8E%AF%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%8F%AF%E8%83%BD%E4%BC%9A%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 11 Mar 2016 16:57:50 +0800</pubDate>
+      
+      <guid>https://souths.github.io/post/JS%E7%9A%84splice%E6%96%B9%E6%B3%95%E5%9C%A8for%E5%BE%AA%E7%8E%AF%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%8F%AF%E8%83%BD%E4%BC%9A%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>在写JS代码时，我们常常使用 splice 函数来删除数组中的元素，因为 splice 函数会直接对数组进行修改，从而不需再自己写一个算法来移动数组中的其他元素填补到被</description>
+    </item>
+    
+    <item>
+      <title>SetTou一次定时器做循环使用</title>
+      <link>https://souths.github.io/post/setTou%E4%B8%80%E6%AC%A1%E5%AE%9A%E6%97%B6%E5%99%A8%E5%81%9A%E5%BE%AA%E7%8E%AF%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Fri, 15 Jan 2016 16:47:35 +0800</pubDate>
+      
+      <guid>https://souths.github.io/post/setTou%E4%B8%80%E6%AC%A1%E5%AE%9A%E6%97%B6%E5%99%A8%E5%81%9A%E5%BE%AA%E7%8E%AF%E4%BD%BF%E7%94%A8/</guid>
+      <description>var num = 5 var timer = &#39;&#39; fn() function fn() { timer = setTimeout(function () { num--; se.innerHTML = &amp;quot;&amp;quot;+num+&amp;quot;S 后返回&amp;quot; if(num==0){ clearTimeout(timer) return; } fn() },1000) }</description>
+    </item>
+    
+    <item>
+      <title>Js验证手机或者固定电话</title>
+      <link>https://souths.github.io/post/js%E9%AA%8C%E8%AF%81%E6%89%8B%E6%9C%BA%E6%88%96%E8%80%85%E5%9B%BA%E5%AE%9A%E7%94%B5%E8%AF%9D/</link>
+      <pubDate>Mon, 21 Dec 2015 16:59:09 +0800</pubDate>
+      
+      <guid>https://souths.github.io/post/js%E9%AA%8C%E8%AF%81%E6%89%8B%E6%9C%BA%E6%88%96%E8%80%85%E5%9B%BA%E5%AE%9A%E7%94%B5%E8%AF%9D/</guid>
+      <description>/^1\d{10}$|^(0\d{2,3}-?|\(0\d{2,3}\))?[1-9]\d{4,7}(-\d{1,8})?$/.test(value) 规则说明： 1、可以是1开头的11位数字（手机号） 2、可以是“区号-电话号-分机号”或者是“(区号)电话号-分机号”格式 3、区号是0开头的3</description>
+    </item>
+    
+    <item>
+      <title>Jquery入口简单分析</title>
+      <link>https://souths.github.io/post/jquery%E5%85%A5%E5%8F%A3%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/</link>
+      <pubDate>Sun, 20 Dec 2015 17:04:46 +0800</pubDate>
+      
+      <guid>https://souths.github.io/post/jquery%E5%85%A5%E5%8F%A3%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/</guid>
+      <description>var aQuery = function (selector, context) { return new aQuery.prototype.init(); } aQuery.prototype = { constructor: aQuery, init: function () { this.v = &#39;vvv&#39; console.log(this.age,&#39;=&amp;gt;age&#39;); // 20 =&amp;gt;age return this; }, name: function () { console.log(arguments); console.log(this.age); //20 console.log(this.v); // vv return this.age }, age: 20 } aQuery.prototype.init.prototype = aQuery.prototype; console.log(aQuery().name()) //20</description>
+    </item>
+    
+    <item>
+      <title>Jquery中实用技巧</title>
+      <link>https://souths.github.io/post/jquery%E4%B8%AD%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/</link>
+      <pubDate>Sun, 20 Dec 2015 17:03:00 +0800</pubDate>
+      
+      <guid>https://souths.github.io/post/jquery%E4%B8%AD%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/</guid>
+      <description>if语句一定要有大括号包裹, for中表达式写法 var array = [&#39;Java&#39;, &#39;Python&#39;, &#39;scala&#39;] for (let index = array.length - 1, element; (element = array[index]) != null; index--) { console.log(element, index) }</description>
     </item>
     
     <item>

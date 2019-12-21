@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>其他 on souths的博客</title>
+    <link>https://souths.github.io/categories/%E5%85%B6%E4%BB%96/</link>
+    <description>Recent content in 其他 on souths的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 05 May 2019 17:03:41 +0800</lastBuildDate>
+    
+	<atom:link href="https://souths.github.io/categories/%E5%85%B6%E4%BB%96/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Web新知识点</title>
+      <link>https://souths.github.io/post/web%E6%96%B0%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
+      <pubDate>Sun, 05 May 2019 17:03:41 +0800</pubDate>
+      
+      <guid>https://souths.github.io/post/web%E6%96%B0%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
+      <description>WebAssembly，Service worker，webgpu，webgl，Web Workers electron</description>
+    </item>
+    
+  </channel>
+</rss>
