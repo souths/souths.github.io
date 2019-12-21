@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>web浏览器读卡器 on souths的博客</title>
+    <link>https://souths.github.io/tags/web%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AF%BB%E5%8D%A1%E5%99%A8/</link>
+    <description>Recent content in web浏览器读卡器 on souths的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 21 Dec 2019 17:05:35 +0800</lastBuildDate>
+    
+	<atom:link href="https://souths.github.io/tags/web%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AF%BB%E5%8D%A1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>东信智能读卡器,promise,WebSocket结合代码</title>
+      <link>https://souths.github.io/post/%E4%B8%9C%E4%BF%A1%E6%99%BA%E8%83%BD%E8%AF%BB%E5%8D%A1%E5%99%A8promiseWebSocket%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Sat, 21 Dec 2019 17:05:35 +0800</pubDate>
+      
+      <guid>https://souths.github.io/post/%E4%B8%9C%E4%BF%A1%E6%99%BA%E8%83%BD%E8%AF%BB%E5%8D%A1%E5%99%A8promiseWebSocket%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81/</guid>
+      <description>` /** 用法 import dgSocket from &amp;ldquo;@/common/ts/dgSocket&amp;rdquo;; //钩子函数中对dgSocket进行初始化和使用this.$bus.$on(&#39;wsMessage&#39;,({type,message}:any,data:any)=&amp;gt;{})监听数据的变化 type:&amp;lsquo;error&#39;|&#39;success&amp;rsquo; message:&amp;lsquo;提示的文字&amp;rsquo; data:只有获取数</description>
+    </item>
+    
+  </channel>
+</rss>
