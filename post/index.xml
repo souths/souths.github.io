@@ -6,10 +6,19 @@
     <description>Recent content in Posts on souths的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 21 Dec 2019 17:14:49 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 22 Dec 2019 10:57:17 +0800</lastBuildDate>
     
 	<atom:link href="https://souths.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>苹果APP账号</title>
+      <link>https://souths.github.io/post/%E8%8B%B9%E6%9E%9C%E8%B4%A6%E5%8F%B7/</link>
+      <pubDate>Sun, 22 Dec 2019 10:57:17 +0800</pubDate>
+      
+      <guid>https://souths.github.io/post/%E8%8B%B9%E6%9E%9C%E8%B4%A6%E5%8F%B7/</guid>
+      <description>苹果付费APP账号共享(账号来自互联网) 请不要登录iCloud，后果很严重 下载APP只需要从APP Store登录，下载完成APP后,请退出I</description>
+    </item>
     
     <item>
       <title>小程序回到顶部</title>
